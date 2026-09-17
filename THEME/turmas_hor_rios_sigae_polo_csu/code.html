@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-bright": "#fff8f6", "on-primary-fixed-variant": "#3c3f85", "surface-variant": "#ece0dc", "on-primary": "#ffffff", "secondary": "#ad295a", "surface-tint": "#54579f", "primary-fixed-dim": "#c0c1ff", "inverse-primary": "#c0c1ff", "on-primary-fixed": "#0e0e59", "error-container": "#ffdad6", "tertiary-fixed": "#e0e5ca", "on-tertiary-fixed": "#191d0c", "background": "#fff8f6", "on-surface": "#201a18", "tertiary": "#0e1204", "surface-container-highest": "#ece0dc", "primary-fixed": "#e1e0ff", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "secondary-container": "#fd6796", "surface-container-low": "#fdf1ed", "on-secondary-container": "#6a002f", "surface-container": "#f7ebe7", "on-tertiary-container": "#8a8f77", "inverse-on-surface": "#faeeea", "tertiary-container": "#232715", "on-background": "#201a18", "secondary-fixed-dim": "#ffb1c3", "on-secondary": "#ffffff", "surface-container-high": "#f1e6e2", "on-secondary-fixed-variant": "#8d0942", "on-tertiary-fixed-variant": "#444935", "primary-container": "#191b62", "inverse-surface": "#352f2d", "outline-variant": "#c7c5d2", "outline": "#777682", "on-tertiary": "#ffffff", "surface-dim": "#e3d8d4", "primary": "#02004c", "on-error-container": "#93000a", "on-secondary-fixed": "#3f0019", "tertiary-fixed-dim": "#c4c9af", "on-primary-container": "#8286d1", "surface": "#fff8f6", "secondary-fixed": "#ffd9e0", "on-surface-variant": "#464650", "error": "#ba1a1a" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-xl": "2rem", "gutter-xs": "0.25rem", "sidebar-collapsed": "4.5rem", "gutter-sm": "0.5rem", "sidebar-width": "16rem", "margin-screen": "1.5rem", "gutter-md": "1rem", "header-height": "4rem", "gutter-lg": "1.5rem" }, "fontFamily": { "label-lg": [ "Open Sans" ], "display-lg-mobile": [ "Poppins" ], "body-lg": [ "Open Sans" ], "data-tabular": [ "Open Sans" ], "display-lg": [ "Poppins" ], "label-md": [ "Open Sans" ], "body-sm": [ "Open Sans" ], "headline-sm": [ "Poppins" ], "headline-lg": [ "Poppins" ], "label-sm": [ "Open Sans" ], "body-md": [ "Open Sans" ], "headline-md": [ "Poppins" ] }, "fontSize": { "label-lg": [ "14px", { "lineHeight": "20px", "fontWeight": "600" } ], "display-lg-mobile": [ "26px", { "lineHeight": "32px", "fontWeight": "700" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "data-tabular": [ "13px", { "lineHeight": "18px", "fontWeight": "600" } ], "display-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-md": [ "12px", { "lineHeight": "16px", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "18px", "fontWeight": "400" } ], "headline-sm": [ "16px", { "lineHeight": "24px", "fontWeight": "600" } ], "headline-lg": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-md": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-sidebar-width bg-primary-container text-on-primary z-50 flex flex-col justify-between select-none shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 min-h-0"><div class="h-header-height px-gutter-md flex items-center gap-gutter-sm bg-primary/20"><div class="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-on-secondary font-headline-md font-bold tracking-tight shadow-sm">S</div><div class="flex flex-col overflow-hidden"><div class="flex items-center gap-gutter-xs"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-primary">SIGAE</span><span class="px-1.5 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider bg-secondary text-on-secondary">POLO</span></div><span class="font-label-sm text-label-sm text-on-primary-container truncate">Polo CSU • Esporte &amp; Lazer</span></div></div><div class="px-gutter-md pt-gutter-md pb-gutter-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-primary-container">Operação &amp; Gestão</span></div><nav class="flex-1 px-gutter-sm space-y-1 overflow-y-auto" data-active-classes="bg-secondary text-on-secondary font-label-lg rounded-lg shadow-sm"><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="turmas-horarios" href="#"><span class="material-symbols-outlined text-[20px]">schedule</span><span>Turmas &amp; Horários</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="matriculas-vagas" href="#"><span class="material-symbols-outlined text-[20px]">how_to_reg</span><span>Matrículas &amp; Vagas</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="frequencia-check-in" href="#"><span class="material-symbols-outlined text-[20px]">qr_code_scanner</span><span>Frequência &amp; Check-in</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="alunos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Alunos</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="professores-instrutores" href="#"><span class="material-symbols-outlined text-[20px]">sports</span><span>Professores &amp; Instrutores</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="modalidades-esportivas" href="#"><span class="material-symbols-outlined text-[20px]">fitness_center</span><span>Modalidades Esportivas</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="relatorios-exportacao" href="#"><span class="material-symbols-outlined text-[20px]">description</span><span>Relatórios &amp; XLSX</span></a></nav></div><div class="p-gutter-md bg-primary/20 space-y-gutter-sm"><div class="flex items-center justify-between px-gutter-sm py-1.5 rounded bg-primary-container/40 text-surface-variant"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="font-label-sm text-label-sm text-surface-variant">Cache Offline-First</span></div><span class="font-label-sm text-label-sm text-on-primary-container font-semibold">Sincronizado</span></div><div class="flex items-center justify-between pt-gutter-xs"><div class="flex items-center gap-gutter-xs min-w-0"><div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-on-secondary font-label-md text-label-md font-bold">MR</div><div class="flex flex-col min-w-0 leading-tight"><span class="font-label-md text-label-md text-on-primary truncate">Marcos Ribeiro</span><span class="font-label-sm text-label-sm text-on-primary-container truncate">Coordenador</span></div></div><button class="p-1.5 text-surface-variant hover:text-secondary-fixed transition-colors" title="Encerrar sessão" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></aside><div class="pl-sidebar-width min-h-screen"><header class="fixed top-0 left-sidebar-width right-0 h-header-height bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-lg"><div class="flex items-center gap-gutter-md min-w-0"><div class="hidden md:flex items-center gap-gutter-xs"><span class="px-2 py-0.5 rounded bg-surface-variant font-label-sm text-label-sm text-on-surface-variant font-semibold">Polo CSU</span><span class="font-body-sm text-body-sm text-outline">•</span><span class="font-label-md text-label-md text-on-surface truncate">Unidade Central</span></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline pointer-events-none text-[18px]">search</span><input class="w-64 lg:w-80 h-[38px] pl-9 pr-12 rounded bg-surface-container-lowest font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary-container shadow-sm" placeholder="Busca rápida geral..." type="text"/><kbd class="absolute right-2.5 px-1.5 py-0.5 rounded bg-surface-container text-[10px] font-semibold text-outline-variant">Ctrl+K</kbd></div></div><div class="flex items-center gap-gutter-md"><div class="relative flex items-center"><button class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary-fixed/50 hover:bg-secondary-fixed text-on-secondary-fixed transition-colors" type="button"><span class="material-symbols-outlined text-[18px] text-secondary">warning</span><span class="font-label-md text-label-md hidden sm:inline text-secondary font-semibold">Alerta de Evasão</span><span class="px-1.5 py-0.2 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold">3</span></button></div><div class="flex items-center gap-gutter-sm pl-gutter-sm"><div class="flex flex-col text-right hidden lg:block leading-tight"><span class="font-label-md text-label-md font-semibold text-on-surface">Coord. Marcos Ribeiro</span><span class="font-label-sm text-label-sm text-outline">Matrícula #4829</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida/AEtjO1WyXo2ArWeixswS1HP5LpKk9ducsETJDrRuTjn-jFSBY3VndY5B5ZM5--w2xd1HmE9YhhVHzJMeTPgSm7ZVWMtvV0irlrMYm1bKptELGaj9BkdYsNeEt5j8GRQIFO6ZEL9QkGCUQH0pRdROkw43-9PhOrDST9Ozpl7FyHcuMK5oouWDzvUB52wGPR29hIW2gmevVazC0rhf1vokfW4wdt9zN1xpLjeytDlDIOErXl8whQikv5VvkaarSLVZl3Bb4H1RMGJwqcXcyA"/></div></div></header><main class="w-full pt-header-height bg-surface px-gutter-lg pb-gutter-xl"><div class="flex flex-col w-full space-y-gutter-lg">
+<!-- Sub-Header / Context Bar -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-gutter-md">
+<div class="space-y-1">
+<div class="flex items-center gap-gutter-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">SIGAE • Unidade CSU Central</span>
+<span class="font-body-sm text-body-sm text-outline">•</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Semestre Vigente 2025.1</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary-container tracking-tight">
+        Gestão de Turmas &amp; Grade Horária
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Supervisão em tempo real da ocupação de praças esportivas, frequência e alocação de instrutores municipais.
+      </p>
+</div>
+<div class="flex flex-wrap items-center gap-gutter-sm">
+<div class="flex items-center bg-surface-container rounded-lg p-0.5 shadow-sm">
+<button class="px-3 py-1.5 rounded text-on-primary bg-primary-container font-label-md text-label-md flex items-center gap-1.5 transition-all" id="viewGridBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+<span>Grade Operacional</span>
+</button>
+<button class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-all" id="viewTableBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+<span>Visão Tabular</span>
+</button>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded bg-surface-container-lowest text-primary-container hover:bg-surface-container font-label-md text-label-md shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Exportar Grade (PDF)</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-headline-sm text-headline-sm shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Nova Turma</span>
+</button>
+</div>
+</section>
+<!-- Metric / Overview Ribbon -->
+<section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter-md">
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Turmas Ativas no Polo</span>
+<div class="font-display-lg text-display-lg text-primary-container font-bold mt-1">42</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">sports</span>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between text-outline">
+<span class="font-body-sm text-body-sm">Capacidade do Complexo</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">1.280 vagas</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Total de Alunos Matriculados</span>
+<div class="font-display-lg text-display-lg text-primary-container font-bold mt-1">1.124</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">groups</span>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between text-outline">
+<span class="font-body-sm text-body-sm">Taxa de Preenchimento Geral</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">87.8%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 87.8%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Lista de Espera Ativa</span>
+<div class="font-display-lg text-display-lg text-secondary font-bold mt-1">189</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">hourglass_top</span>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between text-outline">
+<span class="font-body-sm text-body-sm">Demanda Alta: Natação Adulto</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">64 inscritos</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Índice Médio de Presença</span>
+<div class="font-display-lg text-display-lg text-primary-container font-bold mt-1">91.4%</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between text-outline">
+<span class="font-body-sm text-body-sm">Últimos 7 dias de aula</span>
+<span class="font-label-sm text-label-sm font-semibold text-emerald-700">+2.1% regular</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-emerald-600 h-full rounded-full" style="width: 91.4%"></div>
+</div>
+</div>
+</section>
+<!-- Filter & Control Panel -->
+<section class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm space-y-gutter-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-gutter-sm">
+<div class="flex flex-wrap items-center gap-gutter-sm flex-1">
+<!-- Modalidade -->
+<div class="flex flex-col min-w-[170px]">
+<label class="font-label-sm text-label-sm text-outline mb-1 uppercase tracking-wider">Modalidade</label>
+<div class="relative">
+<select class="w-full h-[38px] px-3 pr-8 rounded bg-surface-container-low font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest transition-colors appearance-none cursor-pointer">
+<option value="all">Todas as Modalidades</option>
+<option value="natacao">Natação</option>
+<option value="futsal">Futsal</option>
+<option value="judo">Judô</option>
+<option value="ginastica">Ginástica Rítmica</option>
+<option value="volei">Voleibol</option>
+<option value="basquete">Basquetebol</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-[18px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Faixa Etária -->
+<div class="flex flex-col min-w-[160px]">
+<label class="font-label-sm text-label-sm text-outline mb-1 uppercase tracking-wider">Faixa Etária</label>
+<div class="relative">
+<select class="w-full h-[38px] px-3 pr-8 rounded bg-surface-container-low font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest transition-colors appearance-none cursor-pointer">
+<option value="all">Todas as Idades</option>
+<option value="kids">Kids (06 a 11 anos)</option>
+<option value="juvenil">Juvenil (12 a 17 anos)</option>
+<option value="adulto">Adulto (18 a 59 anos)</option>
+<option value="melhor-idade">Melhor Idade (60+)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-[18px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Dias da Semana -->
+<div class="flex flex-col min-w-[170px]">
+<label class="font-label-sm text-label-sm text-outline mb-1 uppercase tracking-wider">Dias da Semana</label>
+<div class="relative">
+<select class="w-full h-[38px] px-3 pr-8 rounded bg-surface-container-low font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest transition-colors appearance-none cursor-pointer">
+<option value="all">Todos os Dias</option>
+<option value="seg-qua-sex">Seg / Qua / Sex</option>
+<option value="ter-qui">Ter / Qui</option>
+<option value="sab">Sábados (Manhã)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-[18px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Turno / Horário -->
+<div class="flex flex-col min-w-[140px]">
+<label class="font-label-sm text-label-sm text-outline mb-1 uppercase tracking-wider">Turno</label>
+<div class="relative">
+<select class="w-full h-[38px] px-3 pr-8 rounded bg-surface-container-low font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest transition-colors appearance-none cursor-pointer">
+<option value="all">Manhã &amp; Tarde</option>
+<option value="matutino">Matutino (07h-12h)</option>
+<option value="vespertino">Vespertino (13h-18h)</option>
+<option value="noturno">Noturno (18h-21h)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-[18px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex items-end gap-gutter-xs pt-2 md:pt-0">
+<button class="h-[38px] px-3 rounded bg-surface-container hover:bg-surface-variant text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Filtros Avançados</span>
+</button>
+<button class="h-[38px] px-3 rounded bg-surface-container hover:bg-surface-variant text-on-surface-variant font-label-md text-label-md flex items-center gap-1 transition-colors" title="Limpar Filtros" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2 pt-2">
+<span class="font-label-sm text-label-sm text-outline">Filtros Ativos:</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span>Modalidade: Todas</span>
+<button class="text-outline hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span>Turno: Todos</span>
+<button class="text-outline hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Apenas Vagas Disponíveis</span>
+<button class="text-on-secondary-fixed hover:opacity-75" type="button"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+</div>
+</section>
+<!-- Main Operational Core: 12-Column Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-lg items-start">
+<!-- Operational Cards / Table (8 cols on XL) -->
+<main class="xl:col-span-8 flex flex-col space-y-gutter-md">
+<!-- View 1: Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-md" id="cardsView">
+<!-- Turma Card 1: Natação Kids (Quase Lotada) -->
+<article class="bg-surface-container-lowest rounded-xl p-gutter-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-gutter-md">
+<div class="space-y-gutter-sm">
+<div class="flex items-start justify-between gap-gutter-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-data-tabular text-data-tabular">NAT-102</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">pool</span>
+                  Natação Infantil
+                </span>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-100 text-emerald-900">
+                Ativa
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-primary-container">
+                Natação Nível II (Iniciação Aquática)
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+                Piscina Semiolímpica • Raias 1 a 4
+              </p>
+</div>
+<!-- Schedule & Age Metadata Grid -->
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+<div class="leading-tight">
+<span class="block font-label-sm text-label-sm text-outline">Dias</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Seg / Qua / Sex</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+<div class="leading-tight">
+<span class="block font-label-sm text-label-sm text-outline">Horário</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">08:00 - 08:50</span>
+</div>
+</div>
+</div>
+<!-- Professor Responsável -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover shadow-sm" data-alt="Foto de perfil de um instrutor de natação municipal, homem pardo sorridente com apito e camiseta esportiva azul marinho da Secretaria de Esportes, fundo de centro aquático com iluminação natural diurna." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxecmKJy_29Dua-vTWAWW0GUWbNawAB0U5gxgb9UT0lqRWKzS6T6h9s92crNguQuQfhAwoid67zg16aNoZ9HlZ5qpUhzgc4-HqWW-YYPjwj0pPKIwQ2JVzcBw0MBukljkGRLqawMUCOtPiWdDWkDt1f9suz7eKA2Tj3Q7rPB7MScMgOrjAIPbTUeisWAqsnaZbcBQLPF50NSp-ZSauQGsRflcnPz8LTZXeBiR3JpCB0qa4i4OPul5P4g"/>
+<div class="leading-tight">
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Prof. André Valente</span>
+<span class="font-label-sm text-label-sm text-outline">CREF 04921-G/SP • 06 a 09 anos</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-secondary">93% Ocupado</span>
+</div>
+<!-- Progress Bar de Vagas -->
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-semibold">28 matriculados de 30 vagas</span>
+<span class="text-secondary font-bold">2 restantes</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all" style="width: 93.3%"></div>
+</div>
+</div>
+</div>
+<!-- Quick Action Footer -->
+<div class="pt-gutter-sm flex items-center justify-between gap-1.5">
+<button class="flex-1 py-1.5 px-2.5 rounded bg-surface-container hover:bg-surface-variant text-primary-container font-label-sm text-label-sm font-bold flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+<span>Alunos (28)</span>
+</button>
+<button class="flex-1 py-1.5 px-2.5 rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-label-sm text-label-sm font-bold flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+<span>Chamada</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-variant text-outline hover:text-on-surface transition-colors" title="Editar Turma" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</article>
+<!-- Turma Card 2: Futsal Juvenil (Lotada) -->
+<article class="bg-surface-container-lowest rounded-xl p-gutter-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-gutter-md">
+<div class="space-y-gutter-sm">
+<div class="flex items-start justify-between gap-gutter-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-data-tabular text-data-tabular">FUT-204</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">sports_soccer</span>
+                  Futsal Sub-15
+                </span>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-red-100 text-red-900">
+                Lotada (Espera)
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-primary-container">
+                Treinamento Tático Futsal Juvenil
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+                Ginásio Poliesportivo CSU • Quadra A
+              </p>
+</div>
+<!-- Schedule & Age Metadata Grid -->
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+<div class="leading-tight">
+<span class="block font-label-sm text-label-sm text-outline">Dias</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Terça e Quinta</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+<div class="leading-tight">
+<span class="block font-label-sm text-label-sm text-outline">Horário</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">14:30 - 16:00</span>
+</div>
+</div>
+</div>
+<!-- Professor Responsável -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover shadow-sm" data-alt="Retrato formal profissional de uma professora e técnica de futsal de meia idade, mulher negra com prancheta tática e apito, vestindo agasalho esportivo institucional bordô e azul escuro, dentro do ginásio poliesportivo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfFTpzKr7xcaQ5IAZ2gM1gF19C6nc00qTSVEt_xcCkRksvTmMgnV65taSNOr21dzXcBt9gNA6KWmFsL75eM-YKIOeuu2fJrz9c-H7qZpIUVUebctS0NMCGdTCCnZhbd0i860vJI5m17O8EbwoJ9Imex21GG9u2HIBIQAzPUMHDr2klnRzSi5_N8Xli-HG22pKDDD-F8tf_uXhFcmGhG1OGiRwy2DVoTIQrpbPQhjst53oMPH5hSiQLfw"/>
+<div class="leading-tight">
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Profa. Roberta Guimarães</span>
+<span class="font-label-sm text-label-sm text-outline">CREF 01844-G/SP • 12 a 15 anos</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-red-700">100% (8 na fila)</span>
+</div>
+<!-- Progress Bar de Vagas -->
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-semibold">24 matriculados de 24 vagas</span>
+<span class="text-red-700 font-bold">Vagas Esgotadas</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-red-600 h-full rounded-full transition-all" style="width: 100%"></div>
+</div>
+</div>
+</div>
+<!-- Quick Action Footer -->
+<div class="pt-gutter-sm flex items-center justify-between gap-1.5">
+<button class="flex-1 py-1.5 px-2.5 rounded bg-surface-container hover:bg-surface-variant text-primary-container font-label-sm text-label-sm font-bold flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+<span>Alunos (24)</span>
+</button>
+<button class="flex-1 py-1.5 px-2.5 rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-label-sm text-label-sm font-bold flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+<span>Chamada</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-variant text-outline hover:text-on-surface transition-colors" title="Editar Turma" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</article>
+<!-- Turma Card 3: Judô Formativo (Vagas Abertas) -->
+<article class="bg-surface-container-lowest rounded-xl p-gutter-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-gutter-md">
+<div class="space-y-gutter-sm">
+<div class="flex items-start justify-between gap-gutter-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-data-tabular text-data-tabular">JUD-015</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">sports_kabaddi</span>
+                  Judô Iniciação
+                </span>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-100 text-emerald-900">
+                Matrículas Abertas
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-primary-container">
+                Judô Disciplinar &amp; Psicomotricidade
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+                Dojo Municipal • Sala 02 Tatame
+              </p>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+<div class="leading-tight">
+<span class="block font-label-sm text-label-sm text-outline">Dias</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Seg / Qua</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+<div class="leading-tight">
+<span class="block font-label-sm text-label-sm text-outline">Horário</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">10:00 - 11:00</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover shadow-sm" data-alt="Fotografia de rosto em alta resolução de um sensei de judô, homem asiático-brasileiro com quimono branco tradicional (judogi) limpo e faixa preta, expressão séria e acolhedora em frente ao tatame de treino." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKBFmdDmF2CIOn1S5aj_5v8rdNBNRSkfnBbXrKk4-l_esSIlxnHCQJaj02XuMcjlIivpoBt5RFTBlkZ1m3xOiXiXHUvnFj28ZdpZkHsLa9A4Xim0GKcPKQoehFuAg2BEOYwpsKaWas6YrG7hIjXwa1PHYrXjta1wTYt116_lpxKqvF1c9LSjHXlMtam8bYhQaexzZZt1PCRkyqg0aovgvHA3zCJagtoYyVL8nx23Hg55ehwhnhU3N7VQ"/>
+<div class="leading-tight">
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Sensei Kenji Tanaka</span>
+<span class="font-label-sm text-label-sm text-outline">Faixa Preta 4º Dan • 07 a 13 anos</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-emerald-700">70% Ocupado</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-semibold">14 matriculados de 20 vagas</span>
+<span class="text-emerald-700 font-bold">6 vagas livres</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-emerald-600 h-full rounded-full transition-all" style="width: 70%"></div>
+</div>
+</div>
+</div>
+<div class="pt-gutter-sm flex items-center justify-between gap-1.5">
+<button class="flex-1 py-1.5 px-2.5 rounded bg-surface-container hover:bg-surface-variant text-primary-container font-label-sm text-label-sm font-bold flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+<span>Alunos (14)</span>
+</button>
+<button class="flex-1 py-1.5 px-2.5 rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-label-sm text-label-sm font-bold flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+<span>Chamada</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-variant text-outline hover:text-on-surface transition-colors" title="Editar Turma" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</article>
+<!-- Turma Card 4: Hidroginástica Melhor Idade -->
+<article class="bg-surface-container-lowest rounded-xl p-gutter-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-gutter-md">
+<div class="space-y-gutter-sm">
+<div class="flex items-start justify-between gap-gutter-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-data-tabular text-data-tabular">HID-088</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">waves</span>
+                  Hidroginástica
+                </span>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-100 text-emerald-900">
+                Ativa
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-primary-container">
+                Hidroginástica Saudável 60+
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+                Piscina Aquecida Coberta • Área Rasa
+              </p>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+<div class="leading-tight">
+<span class="block font-label-sm text-label-sm text-outline">Dias</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Terça e Quinta</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+<div class="leading-tight">
+<span class="block font-label-sm text-label-sm text-outline">Horário</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">07:30 - 08:20</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary font-label-md font-bold flex items-center justify-center">
+                  CL
+                </div>
+<div class="leading-tight">
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Profa. Camila Lins</span>
+<span class="font-label-sm text-label-sm text-outline">CREF 08920-G/SP • 60+ anos</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-secondary">97% Ocupado</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-semibold">34 matriculados de 35 vagas</span>
+<span class="text-secondary font-bold">1 restante</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all" style="width: 97.1%"></div>
+</div>
+</div>
+</div>
+<div class="pt-gutter-sm flex items-center justify-between gap-1.5">
+<button class="flex-1 py-1.5 px-2.5 rounded bg-surface-container hover:bg-surface-variant text-primary-container font-label-sm text-label-sm font-bold flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+<span>Alunos (34)</span>
+</button>
+<button class="flex-1 py-1.5 px-2.5 rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-label-sm text-label-sm font-bold flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+<span>Chamada</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-variant text-outline hover:text-on-surface transition-colors" title="Editar Turma" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</article>
+</div>
+<!-- View 2: Tabular Condensed Grid (Hidden by default, toggleable via JS) -->
+<div class="hidden bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden" id="tableView">
+<div class="p-gutter-md bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">list_alt</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary-container">Grade Tabular Consolidada</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-surface-container text-outline">4 Turmas Filtradas</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface" title="Recarregar" type="button">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-4">Cód.</th>
+<th class="py-2.5 px-4">Modalidade &amp; Nível</th>
+<th class="py-2.5 px-4">Espaço Físico</th>
+<th class="py-2.5 px-4">Dias / Horário</th>
+<th class="py-2.5 px-4">Instrutor</th>
+<th class="py-2.5 px-4 text-center">Ocupação</th>
+<th class="py-2.5 px-4 text-center">Status</th>
+<th class="py-2.5 px-4 text-right">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-md text-body-md text-on-surface">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2.5 px-4 font-data-tabular text-data-tabular font-bold text-primary-container">NAT-102</td>
+<td class="py-2.5 px-4">
+<div class="font-semibold text-primary-container">Natação Nível II</div>
+<div class="font-label-sm text-label-sm text-outline">Kids (06 a 09 anos)</div>
+</td>
+<td class="py-2.5 px-4 font-body-sm text-body-sm text-on-surface-variant">Piscina Semiolímpica (Raia 1-4)</td>
+<td class="py-2.5 px-4">
+<div class="font-semibold text-on-surface">Seg / Qua / Sex</div>
+<div class="font-data-tabular text-data-tabular text-outline">08:00 - 08:50</div>
+</td>
+<td class="py-2.5 px-4 font-body-sm text-body-sm text-on-surface">André Valente</td>
+<td class="py-2.5 px-4 text-center">
+<div class="font-data-tabular text-data-tabular font-bold text-secondary">28 / 30</div>
+<div class="font-label-sm text-label-sm text-outline">93%</div>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase bg-emerald-100 text-emerald-900">Ativa</span>
+</td>
+<td class="py-2.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-primary-container" title="Lista de Alunos" type="button"><span class="material-symbols-outlined text-[18px]">groups</span></button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary" title="Chamada Rápida" type="button"><span class="material-symbols-outlined text-[18px]">fact_check</span></button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-on-surface" title="Editar" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2.5 px-4 font-data-tabular text-data-tabular font-bold text-primary-container">FUT-204</td>
+<td class="py-2.5 px-4">
+<div class="font-semibold text-primary-container">Futsal Sub-15 Tático</div>
+<div class="font-label-sm text-label-sm text-outline">Juvenil (12 a 15 anos)</div>
+</td>
+<td class="py-2.5 px-4 font-body-sm text-body-sm text-on-surface-variant">Ginásio Poliesportivo (Q. A)</td>
+<td class="py-2.5 px-4">
+<div class="font-semibold text-on-surface">Terça e Quinta</div>
+<div class="font-data-tabular text-data-tabular text-outline">14:30 - 16:00</div>
+</td>
+<td class="py-2.5 px-4 font-body-sm text-body-sm text-on-surface">Roberta Guimarães</td>
+<td class="py-2.5 px-4 text-center">
+<div class="font-data-tabular text-data-tabular font-bold text-red-700">24 / 24</div>
+<div class="font-label-sm text-label-sm text-outline">100% (+8)</div>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase bg-red-100 text-red-900">Lotada</span>
+</td>
+<td class="py-2.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-primary-container" title="Lista de Alunos" type="button"><span class="material-symbols-outlined text-[18px]">groups</span></button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary" title="Chamada Rápida" type="button"><span class="material-symbols-outlined text-[18px]">fact_check</span></button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-on-surface" title="Editar" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2.5 px-4 font-data-tabular text-data-tabular font-bold text-primary-container">JUD-015</td>
+<td class="py-2.5 px-4">
+<div class="font-semibold text-primary-container">Judô Psicomotricidade</div>
+<div class="font-label-sm text-label-sm text-outline">Kids (07 a 13 anos)</div>
+</td>
+<td class="py-2.5 px-4 font-body-sm text-body-sm text-on-surface-variant">Dojo Municipal (Tatame 02)</td>
+<td class="py-2.5 px-4">
+<div class="font-semibold text-on-surface">Seg / Qua</div>
+<div class="font-data-tabular text-data-tabular text-outline">10:00 - 11:00</div>
+</td>
+<td class="py-2.5 px-4 font-body-sm text-body-sm text-on-surface">Kenji Tanaka</td>
+<td class="py-2.5 px-4 text-center">
+<div class="font-data-tabular text-data-tabular font-bold text-emerald-700">14 / 20</div>
+<div class="font-label-sm text-label-sm text-outline">70%</div>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase bg-emerald-100 text-emerald-900">Vagas</span>
+</td>
+<td class="py-2.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-primary-container" title="Lista de Alunos" type="button"><span class="material-symbols-outlined text-[18px]">groups</span></button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary" title="Chamada Rápida" type="button"><span class="material-symbols-outlined text-[18px]">fact_check</span></button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-on-surface" title="Editar" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2.5 px-4 font-data-tabular text-data-tabular font-bold text-primary-container">HID-088</td>
+<td class="py-2.5 px-4">
+<div class="font-semibold text-primary-container">Hidroginástica Saudável</div>
+<div class="font-label-sm text-label-sm text-outline">Melhor Idade (60+)</div>
+</td>
+<td class="py-2.5 px-4 font-body-sm text-body-sm text-on-surface-variant">Piscina Aquecida Coberta</td>
+<td class="py-2.5 px-4">
+<div class="font-semibold text-on-surface">Terça e Quinta</div>
+<div class="font-data-tabular text-data-tabular text-outline">07:30 - 08:20</div>
+</td>
+<td class="py-2.5 px-4 font-body-sm text-body-sm text-on-surface">Camila Lins</td>
+<td class="py-2.5 px-4 text-center">
+<div class="font-data-tabular text-data-tabular font-bold text-secondary">34 / 35</div>
+<div class="font-label-sm text-label-sm text-outline">97%</div>
+</td>
+<td class="py-2.5 px-4 text-center">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase bg-emerald-100 text-emerald-900">Ativa</span>
+</td>
+<td class="py-2.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-primary-container" title="Lista de Alunos" type="button"><span class="material-symbols-outlined text-[18px]">groups</span></button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary" title="Chamada Rápida" type="button"><span class="material-symbols-outlined text-[18px]">fact_check</span></button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-on-surface" title="Editar" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Quick Operational Action Banner -->
+<section class="bg-primary-container text-on-primary rounded-xl p-gutter-md shadow-md flex flex-col md:flex-row items-center justify-between gap-gutter-md relative overflow-hidden">
+<div class="space-y-1 relative z-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed">assignment_turned_in</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Registro de Frequência Diária</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container max-w-xl">
+            8 turmas finalizaram o período matutino. 6 já enviaram a folha digital de presença via aplicativo móvel do instrutor.
+          </p>
+</div>
+<div class="flex items-center gap-gutter-xs relative z-10 w-full md:w-auto">
+<button class="w-full md:w-auto px-4 py-2 rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-label-md text-label-md font-semibold transition-all" type="button">
+            Auditar Presenças Pendentes
+          </button>
+</div>
+</section>
+</main>
+<!-- Sidebar / Drawer: Ocupação dos Espaços Físicos (4 cols on XL) -->
+<aside class="xl:col-span-4 flex flex-col space-y-gutter-md">
+<!-- Real-time Space Occupation Panel -->
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm space-y-gutter-md">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Infraestrutura do CSU</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary-container mt-0.5">
+              Ocupação dos Espaços Físicos
+            </h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+            Ao Vivo
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Percentual de horas-aula alocadas na grade horária semanal em relação à capacidade máxima de uso das quadras e piscinas.
+        </p>
+<!-- Meter 1: Piscina Aquecida -->
+<div class="space-y-1.5 bg-surface-container-low p-3 rounded-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">pool</span>
+<span class="font-label-md text-label-md text-primary-container font-semibold">Piscina Aquecida (Coberta)</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">95%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 95%"></div>
+</div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm pt-0.5">
+<span>38h semanais ocupadas</span>
+<span class="text-secondary font-semibold">Crítico (Quase esgotado)</span>
+</div>
+</div>
+<!-- Meter 2: Quadra Poliesportiva -->
+<div class="space-y-1.5 bg-surface-container-low p-3 rounded-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">sports_volleyball</span>
+<span class="font-label-md text-label-md text-primary-container font-semibold">Quadra Poliesportiva Central</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-primary-container">88%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 88%"></div>
+</div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm pt-0.5">
+<span>44h semanais ocupadas</span>
+<span class="text-on-surface font-semibold">Alta Demanda</span>
+</div>
+</div>
+<!-- Meter 3: Campo Sintético -->
+<div class="space-y-1.5 bg-surface-container-low p-3 rounded-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">sports_soccer</span>
+<span class="font-label-md text-label-md text-primary-container font-semibold">Campo Society Sintético</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-primary-container">82%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 82%"></div>
+</div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm pt-0.5">
+<span>36h semanais ocupadas</span>
+<span class="text-emerald-700 font-semibold">Disponível Terça Manhã</span>
+</div>
+</div>
+<!-- Meter 4: Sala de Artes Marciais -->
+<div class="space-y-1.5 bg-surface-container-low p-3 rounded-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">sports_martial_arts</span>
+<span class="font-label-md text-label-md text-primary-container font-semibold">Dojo / Sala de Artes Marciais</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-primary-container">70%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 70%"></div>
+</div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm pt-0.5">
+<span>28h semanais ocupadas</span>
+<span class="text-emerald-700 font-semibold">Janelas para Novas Turmas</span>
+</div>
+</div>
+<!-- Vector Graphic Sparkline Summary -->
+<div class="pt-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Média Semanal de Ocupação</span>
+<span class="font-label-sm text-label-sm font-bold text-primary-container">83.75% Global</span>
+</div>
+<svg class="w-full h-12 text-primary-container" fill="none" viewbox="0 0 300 50" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 45 L50 35 L100 38 L150 18 L200 25 L250 10 L300 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle class="fill-secondary" cx="250" cy="10" r="4"></circle>
+<circle class="fill-primary-container" cx="300" cy="12" r="4"></circle>
+</svg>
+</div>
+<button class="w-full py-2 px-3 rounded bg-surface-container hover:bg-surface-variant text-primary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">calendar_view_week</span>
+<span>Ver Mapa Visual de Horários</span>
+</button>
+</div>
+<!-- Quick Support / Audit Notice Card -->
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm space-y-gutter-sm">
+<div class="flex items-center gap-2 text-primary-container">
+<span class="material-symbols-outlined text-secondary">info</span>
+<span class="font-label-lg text-label-lg font-bold">Normativa Municipal nº 14/2024</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Turmas com frequência consolidada inferior a 70% por 30 dias consecutivos têm suas vagas remanescentes liberadas automaticamente para a lista de espera.
+        </p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-outline">Última checagem: Hoje, 07:15</span>
+<a class="font-label-sm text-label-sm text-secondary hover:underline font-bold" href="#">Regulamento →</a>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<!-- Inline Javascript for Micro-interactions (Grid/Table View Toggle) -->
+<script>
+  (function() {
+    const btnGrid = document.getElementById('viewGridBtn');
+    const btnTable = document.getElementById('viewTableBtn');
+    const viewGrid = document.getElementById('cardsView');
+    const viewTable = document.getElementById('tableView');
+
+    if (btnGrid && btnTable && viewGrid && viewTable) {
+      btnGrid.addEventListener('click', function() {
+        viewGrid.classList.remove('hidden');
+        viewTable.classList.add('hidden');
+        
+        btnGrid.classList.add('bg-primary-container', 'text-on-primary');
+        btnGrid.classList.remove('text-on-surface-variant');
+        
+        btnTable.classList.remove('bg-primary-container', 'text-on-primary');
+        btnTable.classList.add('text-on-surface-variant');
+      });
+
+      btnTable.addEventListener('click', function() {
+        viewTable.classList.remove('hidden');
+        viewGrid.classList.add('hidden');
+        
+        btnTable.classList.add('bg-primary-container', 'text-on-primary');
+        btnTable.classList.remove('text-on-surface-variant');
+        
+        btnGrid.classList.remove('bg-primary-container', 'text-on-primary');
+        btnGrid.classList.add('text-on-surface-variant');
+      });
+    }
+  })();
+</script></main></div></body></html>

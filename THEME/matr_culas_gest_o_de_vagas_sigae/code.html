@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-bright": "#fff8f6", "on-primary-fixed-variant": "#3c3f85", "surface-variant": "#ece0dc", "on-primary": "#ffffff", "secondary": "#ad295a", "surface-tint": "#54579f", "primary-fixed-dim": "#c0c1ff", "inverse-primary": "#c0c1ff", "on-primary-fixed": "#0e0e59", "error-container": "#ffdad6", "tertiary-fixed": "#e0e5ca", "on-tertiary-fixed": "#191d0c", "background": "#fff8f6", "on-surface": "#201a18", "tertiary": "#0e1204", "surface-container-highest": "#ece0dc", "primary-fixed": "#e1e0ff", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "secondary-container": "#fd6796", "surface-container-low": "#fdf1ed", "on-secondary-container": "#6a002f", "surface-container": "#f7ebe7", "on-tertiary-container": "#8a8f77", "inverse-on-surface": "#faeeea", "tertiary-container": "#232715", "on-background": "#201a18", "secondary-fixed-dim": "#ffb1c3", "on-secondary": "#ffffff", "surface-container-high": "#f1e6e2", "on-secondary-fixed-variant": "#8d0942", "on-tertiary-fixed-variant": "#444935", "primary-container": "#191b62", "inverse-surface": "#352f2d", "outline-variant": "#c7c5d2", "outline": "#777682", "on-tertiary": "#ffffff", "surface-dim": "#e3d8d4", "primary": "#02004c", "on-error-container": "#93000a", "on-secondary-fixed": "#3f0019", "tertiary-fixed-dim": "#c4c9af", "on-primary-container": "#8286d1", "surface": "#fff8f6", "secondary-fixed": "#ffd9e0", "on-surface-variant": "#464650", "error": "#ba1a1a" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-xl": "2rem", "gutter-xs": "0.25rem", "sidebar-collapsed": "4.5rem", "gutter-sm": "0.5rem", "sidebar-width": "16rem", "margin-screen": "1.5rem", "gutter-md": "1rem", "header-height": "4rem", "gutter-lg": "1.5rem" }, "fontFamily": { "label-lg": [ "Open Sans" ], "display-lg-mobile": [ "Poppins" ], "body-lg": [ "Open Sans" ], "data-tabular": [ "Open Sans" ], "display-lg": [ "Poppins" ], "label-md": [ "Open Sans" ], "body-sm": [ "Open Sans" ], "headline-sm": [ "Poppins" ], "headline-lg": [ "Poppins" ], "label-sm": [ "Open Sans" ], "body-md": [ "Open Sans" ], "headline-md": [ "Poppins" ] }, "fontSize": { "label-lg": [ "14px", { "lineHeight": "20px", "fontWeight": "600" } ], "display-lg-mobile": [ "26px", { "lineHeight": "32px", "fontWeight": "700" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "data-tabular": [ "13px", { "lineHeight": "18px", "fontWeight": "600" } ], "display-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-md": [ "12px", { "lineHeight": "16px", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "18px", "fontWeight": "400" } ], "headline-sm": [ "16px", { "lineHeight": "24px", "fontWeight": "600" } ], "headline-lg": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-md": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-sidebar-width bg-primary-container text-on-primary z-50 flex flex-col justify-between select-none shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 min-h-0"><div class="h-header-height px-gutter-md flex items-center gap-gutter-sm bg-primary/20"><div class="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-on-secondary font-headline-md font-bold tracking-tight shadow-sm">S</div><div class="flex flex-col overflow-hidden"><div class="flex items-center gap-gutter-xs"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-primary">SIGAE</span><span class="px-1.5 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider bg-secondary text-on-secondary">POLO</span></div><span class="font-label-sm text-label-sm text-on-primary-container truncate">Polo CSU • Esporte &amp; Lazer</span></div></div><div class="px-gutter-md pt-gutter-md pb-gutter-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-primary-container">Operação &amp; Gestão</span></div><nav class="flex-1 px-gutter-sm space-y-1 overflow-y-auto" data-active-classes="bg-secondary text-on-secondary font-label-lg rounded-lg shadow-sm"><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="turmas-horarios" href="#"><span class="material-symbols-outlined text-[20px]">schedule</span><span>Turmas &amp; Horários</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="matriculas-vagas" href="#"><span class="material-symbols-outlined text-[20px]">how_to_reg</span><span>Matrículas &amp; Vagas</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="frequencia-check-in" href="#"><span class="material-symbols-outlined text-[20px]">qr_code_scanner</span><span>Frequência &amp; Check-in</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="alunos" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Alunos</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="professores-instrutores" href="#"><span class="material-symbols-outlined text-[20px]">sports</span><span>Professores &amp; Instrutores</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="modalidades-esportivas" href="#"><span class="material-symbols-outlined text-[20px]">fitness_center</span><span>Modalidades Esportivas</span></a><a class="flex items-center gap-gutter-sm px-gutter-sm py-2.5 rounded-lg font-body-md text-body-md text-surface-variant hover:bg-surface-variant/10 hover:text-on-primary transition-colors" data-path="relatorios-exportacao" href="#"><span class="material-symbols-outlined text-[20px]">description</span><span>Relatórios &amp; XLSX</span></a></nav></div><div class="p-gutter-md bg-primary/20 space-y-gutter-sm"><div class="flex items-center justify-between px-gutter-sm py-1.5 rounded bg-primary-container/40 text-surface-variant"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="font-label-sm text-label-sm text-surface-variant">Cache Offline-First</span></div><span class="font-label-sm text-label-sm text-on-primary-container font-semibold">Sincronizado</span></div><div class="flex items-center justify-between pt-gutter-xs"><div class="flex items-center gap-gutter-xs min-w-0"><div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-on-secondary font-label-md text-label-md font-bold">MR</div><div class="flex flex-col min-w-0 leading-tight"><span class="font-label-md text-label-md text-on-primary truncate">Marcos Ribeiro</span><span class="font-label-sm text-label-sm text-on-primary-container truncate">Coordenador</span></div></div><button class="p-1.5 text-surface-variant hover:text-secondary-fixed transition-colors" title="Encerrar sessão" type="button"><span class="material-symbols-outlined text-[20px]">logout</span></button></div></div></aside><div class="pl-sidebar-width min-h-screen"><header class="fixed top-0 left-sidebar-width right-0 h-header-height bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-lg"><div class="flex items-center gap-gutter-md min-w-0"><div class="hidden md:flex items-center gap-gutter-xs"><span class="px-2 py-0.5 rounded bg-surface-variant font-label-sm text-label-sm text-on-surface-variant font-semibold">Polo CSU</span><span class="font-body-sm text-body-sm text-outline">•</span><span class="font-label-md text-label-md text-on-surface truncate">Unidade Central</span></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline pointer-events-none text-[18px]">search</span><input class="w-64 lg:w-80 h-[38px] pl-9 pr-12 rounded bg-surface-container-lowest font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary-container shadow-sm" placeholder="Busca rápida geral..." type="text"/><kbd class="absolute right-2.5 px-1.5 py-0.5 rounded bg-surface-container text-[10px] font-semibold text-outline-variant">Ctrl+K</kbd></div></div><div class="flex items-center gap-gutter-md"><div class="relative flex items-center"><button class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary-fixed/50 hover:bg-secondary-fixed text-on-secondary-fixed transition-colors" type="button"><span class="material-symbols-outlined text-[18px] text-secondary">warning</span><span class="font-label-md text-label-md hidden sm:inline text-secondary font-semibold">Alerta de Evasão</span><span class="px-1.5 py-0.2 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold">3</span></button></div><div class="flex items-center gap-gutter-sm pl-gutter-sm"><div class="flex flex-col text-right hidden lg:block leading-tight"><span class="font-label-md text-label-md font-semibold text-on-surface">Coord. Marcos Ribeiro</span><span class="font-label-sm text-label-sm text-outline">Matrícula #4829</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida/AEtjO1WyXo2ArWeixswS1HP5LpKk9ducsETJDrRuTjn-jFSBY3VndY5B5ZM5--w2xd1HmE9YhhVHzJMeTPgSm7ZVWMtvV0irlrMYm1bKptELGaj9BkdYsNeEt5j8GRQIFO6ZEL9QkGCUQH0pRdROkw43-9PhOrDST9Ozpl7FyHcuMK5oouWDzvUB52wGPR29hIW2gmevVazC0rhf1vokfW4wdt9zN1xpLjeytDlDIOErXl8whQikv5VvkaarSLVZl3Bb4H1RMGJwqcXcyA"/></div></div></header><main class="w-full pt-header-height bg-surface px-gutter-lg pb-gutter-xl"><div class="flex flex-col w-full gap-gutter-lg">
+<!-- Header Institucional & Ações Primárias -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-gutter-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-gutter-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">CSU • Unidade Central 01</span>
+<span class="text-outline text-body-sm">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Ciclo Letivo 2025/1</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">Matrículas &amp; Gestão de Vagas</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Controle integrado de admissões municipais, triagem documental e alocação desportiva.</p>
+</div>
+<div class="flex flex-wrap items-center gap-gutter-sm">
+<button class="flex items-center gap-2 h-[38px] px-gutter-md bg-surface-container-lowest text-primary rounded-lg shadow-sm hover:bg-surface-container transition-all text-label-lg font-label-lg" id="btn-export-excel" type="button">
+<span class="material-symbols-outlined text-[18px]">table_chart</span>
+<span>Exportar XLSX</span>
+</button>
+<button class="flex items-center gap-2 h-[38px] px-gutter-lg bg-secondary text-on-secondary rounded-lg shadow-md hover:bg-secondary/90 transition-all text-label-lg font-label-lg font-semibold" id="btn-open-enroll" type="button">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>+ Cadastrar Nova Matrícula</span>
+</button>
+</div>
+</div>
+<!-- Métricas Rápidas Operacionais -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-24 h-24 bg-primary/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Total de Inscritos</span>
+<div class="font-display-lg text-display-lg text-primary font-bold mt-1">1.482</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-gutter-md pt-gutter-xs">
+<span class="inline-flex items-center text-label-sm font-label-sm font-semibold text-primary px-1.5 py-0.5 rounded bg-primary-fixed">91.2%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Capacidade total do CSU</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-24 h-24 bg-secondary/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Novas Matrículas (Mês)</span>
+<div class="font-display-lg text-display-lg text-secondary font-bold mt-1">+124</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">how_to_reg</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-gutter-md pt-gutter-xs">
+<span class="inline-flex items-center text-label-sm font-label-sm font-semibold text-secondary px-1.5 py-0.5 rounded bg-secondary-fixed">+18%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Comparado a Jan/2025</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-24 h-24 bg-tertiary/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Vagas Remanescentes</span>
+<div class="font-display-lg text-display-lg text-primary font-bold mt-1">146</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined text-[22px]">event_seat</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-gutter-md pt-gutter-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Natação &amp; Futsal mais procurados</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-24 h-24 bg-secondary-container/10 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Fila de Espera Ativa</span>
+<div class="font-display-lg text-display-lg text-secondary font-bold mt-1">58</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">hourglass_top</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-gutter-md pt-gutter-xs">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">12 prioritários</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(CadÚnico / Bolsa Família)</span>
+</div>
+</div>
+</div>
+<!-- Painel Informativo / Alerta de Conformidade de Laudo Municipal -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter-md shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-gutter-md relative overflow-hidden">
+<div class="absolute -left-10 -bottom-10 w-32 h-32 bg-primary/5 rounded-full pointer-events-none"></div>
+<div class="flex items-start gap-gutter-md z-10">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">medical_services</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold text-primary">Protocolo de Conformidade Sanitária &amp; Médica</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-tertiary-container font-label-sm text-label-sm font-bold uppercase">Decreto Municipal 41.820</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5 max-w-3xl">
+          Atividades de alta intensidade e práticas aquáticas exigem laudo de aptidão cardiovascular renovado a cada 12 meses. Alunos com pendências possuem bloqueio biométrico na catraca das piscinas e quadras cobertas.
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-gutter-md shrink-0 z-10">
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Conformidade Geral</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">88.4% Regular</span>
+</div>
+<div class="w-14 h-14 relative flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="88, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-label-md text-label-md font-bold text-primary">88%</span>
+</div>
+<button class="px-gutter-md h-[36px] rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-lg text-label-lg transition-colors" onclick="document.getElementById('modal-laudos').classList.remove('hidden')" type="button">
+        Triagem em Lote
+      </button>
+</div>
+</div>
+<!-- Barra de Filtros e Busca Avançada -->
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm flex flex-col gap-gutter-sm">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter-sm items-end">
+<!-- Input de Termo Livre -->
+<div class="lg:col-span-4 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant" for="search-term">Buscar Aluno, Responsável ou Matrícula</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span>
+<input class="w-full h-[38px] pl-9 pr-3 rounded bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" id="search-term" placeholder="Digite nome, nº de registro ou responsável..." type="text"/>
+</div>
+</div>
+<!-- Filtro por CPF -->
+<div class="lg:col-span-2 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant" for="filter-cpf">CPF (Aluno ou Resp.)</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">fingerprint</span>
+<input class="w-full h-[38px] pl-9 pr-3 rounded bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" id="filter-cpf" placeholder="000.000.000-00" type="text"/>
+</div>
+</div>
+<!-- Filtro de Modalidade -->
+<div class="lg:col-span-2 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant" for="filter-modality">Modalidade</label>
+<select class="w-full h-[38px] px-3 rounded bg-surface-container-low font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" id="filter-modality">
+<option value="all">Todas as Modalidades</option>
+<option value="natacao">Natação Juvenil</option>
+<option value="futsal">Futsal Sub-15</option>
+<option value="volei">Voleibol Adulto</option>
+<option value="ginastica">Ginástica Funcional</option>
+<option value="judo">Judô Formação</option>
+</select>
+</div>
+<!-- Filtro de Status de Matrícula -->
+<div class="lg:col-span-2 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant" for="filter-status">Status da Matrícula</label>
+<select class="w-full h-[38px] px-3 rounded bg-surface-container-low font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" id="filter-status">
+<option value="all">Todos os Status</option>
+<option value="ativo">Ativo (Regular)</option>
+<option value="pendente">Pendente de Laudo</option>
+<option value="trancado">Trancado / Afastado</option>
+<option value="espera">Lista de Espera</option>
+</select>
+</div>
+<!-- Botões de Ação de Filtro -->
+<div class="lg:col-span-2 flex items-center gap-gutter-xs">
+<button class="flex-1 h-[38px] bg-primary text-on-primary rounded font-label-lg text-label-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-1 shadow-sm" id="btn-apply-filters" type="button">
+<span class="material-symbols-outlined text-[18px]">filter_alt</span>
+<span>Filtrar</span>
+</button>
+<button class="h-[38px] px-3 bg-surface-container hover:bg-surface-container-high text-on-surface-variant rounded transition-colors flex items-center justify-center" id="btn-reset-filters" title="Limpar Filtros" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</div>
+</div>
+<!-- Filtros Ativos Chips -->
+<div class="flex items-center gap-gutter-xs flex-wrap pt-gutter-xs text-body-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold mr-1">Filtros rápidos:</span>
+<button class="px-2 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-primary/10 transition-colors flex items-center gap-1">
+<span>Menores de Idade (0-17)</span>
+<span class="text-outline hover:text-secondary material-symbols-outlined text-[14px]">close</span>
+</button>
+<button class="px-2 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-primary/10 transition-colors flex items-center gap-1">
+<span>Laudo a Vencer em 30 dias</span>
+<span class="text-outline hover:text-secondary material-symbols-outlined text-[14px]">close</span>
+</button>
+<button class="px-2 py-1 rounded-full bg-secondary-fixed/50 text-secondary font-label-md text-label-md hover:bg-secondary-fixed transition-colors flex items-center gap-1">
+<span>Somente Turmas Matutinas</span>
+<span class="text-secondary material-symbols-outlined text-[14px]">close</span>
+</button>
+<span class="font-body-sm text-body-sm text-outline ml-auto">Exibindo 6 de 1.482 registros correspondentes</span>
+</div>
+</div>
+<!-- Tabela Otimizada e Densa de Matrículas -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<tr>
+<th class="py-3 px-4 font-semibold">Registro</th>
+<th class="py-3 px-4 font-semibold">Aluno / Dados Cidadão</th>
+<th class="py-3 px-4 font-semibold">Contato / Emergência</th>
+<th class="py-3 px-4 font-semibold">Modalidade &amp; Turma</th>
+<th class="py-3 px-4 font-semibold text-center">Laudo Médico</th>
+<th class="py-3 px-4 font-semibold text-center">Status Matrícula</th>
+<th class="py-3 px-4 font-semibold text-center">Credencial QR</th>
+<th class="py-3 px-4 font-semibold text-right">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container text-on-surface">
+<!-- Linha 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-4 align-middle">
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-primary">#2025-0841</span>
+<span class="font-label-sm text-label-sm text-outline">Cad. 14/01/2025</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle">
+<div class="flex items-center gap-3 min-w-[220px]">
+<img class="w-9 h-9 rounded-full object-cover shrink-0 shadow-sm" data-alt="Close-up portrait of a young Brazilian teen student smiling warmly, clean institutional athletic identification photo with neutral studio lighting and soft warm background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6xK96Ze7Tijwz3Z_ZhBJDzO4d8i5ze-8Q9HMxAzcKgw0il0Ekfl6wnIZlDGxFOgnzJSWYR7KC33V9M8zS6PExQuQ0-0nyDZlQxZ_I3VcYRlydm1dKnOaDebdgozKN-7vfMk-ULRfnGCoh0J8VsW5dupw4j92J665T3g7MdCzF54BlzPbRja_Qgc9H2viLmotBvmS5E0uF19egp6PI0mUwdckA_xE_AcjaWVI4JXZDIgFYrn3VD54JYA"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Lucas Andrade Pinheiro</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">14 anos • Resp: Juliana Andrade (Mãe)</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 align-middle whitespace-nowrap">
+<div class="flex flex-col text-body-sm font-body-sm">
+<span class="text-on-surface font-medium">(11) 98122-4410</span>
+<span class="text-outline">Emergência: (11) 97312-0089</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle">
+<div class="flex flex-col min-w-[170px]">
+<span class="font-label-md text-label-md text-primary font-bold">Natação Juvenil B</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ter/Qui • 08:30 às 09:45</span>
+<span class="font-label-sm text-label-sm text-outline">Prof. Roberto Silveira</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-tertiary-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span>Aprovado</span>
+</span>
+<div class="text-[10px] text-outline mt-0.5 font-label-sm">Válido até 11/2025</div>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold">
+                Ativo
+              </span>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<button class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-highest text-primary transition-all shadow-sm" title="Emitir Carteirinha / QR Code" type="button">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+</button>
+</td>
+<td class="py-3 px-4 align-middle text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Editar Ficha de Matrícula" type="button">
+<span class="material-symbols-outlined text-[19px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Transferir de Turma / Horário" type="button">
+<span class="material-symbols-outlined text-[19px]">sync_alt</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-secondary transition-colors" title="Opções Administrativas" type="button">
+<span class="material-symbols-outlined text-[19px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Linha 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-4 align-middle">
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-primary">#2025-0842</span>
+<span class="font-label-sm text-label-sm text-outline">Cad. 15/01/2025</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle">
+<div class="flex items-center gap-3 min-w-[220px]">
+<img class="w-9 h-9 rounded-full object-cover shrink-0 shadow-sm" data-alt="Portrait of an active elderly Brazilian woman with silver hair wearing a sports athletic shirt, friendly expression, well-lit indoor municipal sports center background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZfyMedkSUSAjwhafiB1n5TnLCrwKzBLEJiqBL4y29m6P86GTEzXaDw71k4UgWgwAmlDhHTS5nLAhviVnoH8elxDSX7763RaKT8RoS74Ifdia_SEtUsXGJ3pRGTx62TvnKeDC60iJZVimRA9igedceC_ck-eldxvlBsbZsXnlUB7wKZTdTUPmQbANYjGf4dJ1j02ojtrfVVMUOMtTdA9myaVwFgWeBf-_crvk6otF0d4HcelkzQGvtfQ"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Maria do Carmo Santos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">62 anos • Própria titular</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 align-middle whitespace-nowrap">
+<div class="flex flex-col text-body-sm font-body-sm">
+<span class="text-on-surface font-medium">(11) 94002-8922</span>
+<span class="text-outline">Emergência: (11) 2341-9980</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle">
+<div class="flex flex-col min-w-[170px]">
+<span class="font-label-md text-label-md text-primary font-bold">Ginástica Funcional 60+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Seg/Qua/Sex • 07:00 às 08:00</span>
+<span class="font-label-sm text-label-sm text-outline">Profª. Mariana Lins</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-secondary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>Vencendo em 8d</span>
+</span>
+<div class="text-[10px] text-outline mt-0.5 font-label-sm">Expira 28/02/2025</div>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold">
+                Ativo
+              </span>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<button class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-highest text-primary transition-all shadow-sm" title="Emitir Carteirinha / QR Code" type="button">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+</button>
+</td>
+<td class="py-3 px-4 align-middle text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Editar Ficha de Matrícula" type="button">
+<span class="material-symbols-outlined text-[19px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Transferir de Turma / Horário" type="button">
+<span class="material-symbols-outlined text-[19px]">sync_alt</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-secondary transition-colors" title="Opções Administrativas" type="button">
+<span class="material-symbols-outlined text-[19px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Linha 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group bg-error-container/10">
+<td class="py-3 px-4 align-middle">
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-primary">#2025-0870</span>
+<span class="font-label-sm text-label-sm text-outline">Cad. 22/01/2025</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle">
+<div class="flex items-center gap-3 min-w-[220px]">
+<img class="w-9 h-9 rounded-full object-cover shrink-0 shadow-sm" data-alt="Headshot of a Brazilian boy aged 10 wearing a blue athletic jersey, clear civic document style portrait, bright daylight illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2lYEIN4G9RJQXfegcit-1PGDMrCUDYVvC5BW348W2mE3z3PzEw_RPa0XfTCLmMU5Smmnet6kV6IWcSuJXFGO_aNKGVxzzqfLNXkkFra0vCHh56JKyUV5btZf2GmT2oUMeaMeXke_45xTIYptsGf8Di-Wo18hCCVZAIym9PWWhqRQ4yKnsQbgDePDJtR_aIQSd4XK1Cs0a1LHpeRkFLGhs8oJDM_oYXxIx6E1klRsCafibPuZ7AErXBw"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Enzo Gabriel Souza</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">10 anos • Resp: Cláudio Souza (Pai)</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 align-middle whitespace-nowrap">
+<div class="flex flex-col text-body-sm font-body-sm">
+<span class="text-on-surface font-medium">(11) 97761-1200</span>
+<span class="text-outline">Emergência: (11) 97761-1201</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle">
+<div class="flex flex-col min-w-[170px]">
+<span class="font-label-md text-label-md text-primary font-bold">Futsal Sub-11 Formação</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sábados • 09:00 às 11:00</span>
+<span class="font-label-sm text-label-sm text-outline">Prof. Thiago Neves</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[15px]">report_problem</span>
+<span>Pendente</span>
+</span>
+<div class="text-[10px] text-error mt-0.5 font-label-sm font-semibold">Bloqueado em Catraca</div>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-secondary-fixed/50 text-secondary font-label-sm text-label-sm font-bold">
+                Pend. Laudo
+              </span>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<button class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container text-outline opacity-50 cursor-not-allowed" disabled="" title="Bloqueado até validação médica" type="button">
+<span class="material-symbols-outlined text-[20px]">no_sim</span>
+</button>
+</td>
+<td class="py-3 px-4 align-middle text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded bg-secondary-fixed/30 text-secondary hover:bg-secondary-fixed transition-colors" onclick="document.getElementById('modal-laudos').classList.remove('hidden')" title="Anexar Laudo Pendente" type="button">
+<span class="material-symbols-outlined text-[19px]">upload_file</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant transition-colors" title="Transferir de Turma" type="button">
+<span class="material-symbols-outlined text-[19px]">sync_alt</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant transition-colors" title="Opções Administrativas" type="button">
+<span class="material-symbols-outlined text-[19px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Linha 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-4 align-middle">
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-primary">#2025-0902</span>
+<span class="font-label-sm text-label-sm text-outline">Cad. 29/01/2025</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle">
+<div class="flex items-center gap-3 min-w-[220px]">
+<img class="w-9 h-9 rounded-full object-cover shrink-0 shadow-sm" data-alt="Portrait of a young adult Brazilian man in athletic wear, authentic look, smiling softly, neutral clean indoor gym background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATchttcBJsT_oQCqvIN3SRhIev0S2OrGmkZDkyCug7dP01pXDluTVdc3PnxT3gFANCM0t4FwUNIMbO65AgCzJvfukzqdjaGp07Zi5LCXK-TBHxogruBKtHD1bwA9LHCzLv9XrcOnmW-W7ord8QY4_gxHHKpZvka_DLSRJkmlKhn2K661u5qLaAbD4EVbVXlMBe1yw87o4AOf-E3mnHtB2WLOLTFt-ZcN2_INR0YAD4yLe18WIutrYJMA"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Rafael Barbosa Lima</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">24 anos • Próprio titular</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 align-middle whitespace-nowrap">
+<div class="flex flex-col text-body-sm font-body-sm">
+<span class="text-on-surface font-medium">(11) 96601-3329</span>
+<span class="text-outline">Emergência: (11) 96601-3330</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle">
+<div class="flex flex-col min-w-[170px]">
+<span class="font-label-md text-label-md text-primary font-bold">Voleibol Adulto Masc</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Seg/Qua • 19:30 às 21:00</span>
+<span class="font-label-sm text-label-sm text-outline">Prof. Fernando Dias</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-tertiary-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span>Aprovado</span>
+</span>
+<div class="text-[10px] text-outline mt-0.5 font-label-sm">Válido até 01/2026</div>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold">
+                Ativo
+              </span>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<button class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-highest text-primary transition-all shadow-sm" title="Emitir Carteirinha / QR Code" type="button">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+</button>
+</td>
+<td class="py-3 px-4 align-middle text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Editar Ficha de Matrícula" type="button">
+<span class="material-symbols-outlined text-[19px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Transferir de Turma / Horário" type="button">
+<span class="material-symbols-outlined text-[19px]">sync_alt</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-secondary transition-colors" title="Opções Administrativas" type="button">
+<span class="material-symbols-outlined text-[19px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Linha 5 (Fila de Espera) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-4 align-middle">
+<div class="flex flex-col">
+<span class="font-data-tabular text-data-tabular font-bold text-on-surface-variant">#ESP-0042</span>
+<span class="font-label-sm text-label-sm text-outline">Fila Pos. #3</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle">
+<div class="flex items-center gap-3 min-w-[220px]">
+<img class="w-9 h-9 rounded-full object-cover shrink-0 shadow-sm" data-alt="Portrait of a young Brazilian girl around 12 years old with curly hair, authentic and confident student expression, natural studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG60jD3yMqZRShatiHxP3dxhPJrar9Uclp-rUaKYD1WCplvDFrX4iE-qgs0P8THYZPkcf0lOKYcQ16mRRuMU96nXgUQS-oBspl3sXXXF9verW5eIhhV96h9t4VZq1wJJgObJoPAfcRjEk6CsK-3jC6wvDH2Pwl68aZYlxxzffuXPQaGE-V7XP5LUAoy7r3e-XKWkjtsdyHwT6GH-mDHmct1KskHkrYyDNxBdEE9OUWqhj69fC3tywV_g"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Camila Duarte Figueiredo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">12 anos • Resp: Denise Figueiredo (Mãe)</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 align-middle whitespace-nowrap">
+<div class="flex flex-col text-body-sm font-body-sm">
+<span class="text-on-surface font-medium">(11) 95543-9821</span>
+<span class="text-outline">CadÚnico: #182.9902.11</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle">
+<div class="flex flex-col min-w-[170px]">
+<span class="font-label-md text-label-md text-on-surface font-bold">Judô Juvenil (Vagas Esgotadas)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ter/Qui • 16:00 às 17:15</span>
+<span class="font-label-sm text-label-sm text-outline">Prof. Kenji Takahashi</span>
+</div>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-outline font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">hourglass_empty</span>
+<span>Sob Análise</span>
+</span>
+<div class="text-[10px] text-outline mt-0.5 font-label-sm">Enviado online</div>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold">
+                Lista Espera
+              </span>
+</td>
+<td class="py-3 px-4 align-middle text-center">
+<span class="text-outline font-label-sm text-label-sm">—</span>
+</td>
+<td class="py-3 px-4 align-middle text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded bg-tertiary-fixed text-tertiary-container hover:bg-tertiary-fixed-dim transition-colors" title="Promover para Vaga Ativa" type="button">
+<span class="material-symbols-outlined text-[19px]">upgrade</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant transition-colors" title="Opções Administrativas" type="button">
+<span class="material-symbols-outlined text-[19px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Paginação e Rodapé da Tabela -->
+<div class="px-gutter-md py-3 bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-gutter-sm border-t border-surface-container">
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Linhas por página:</span>
+<select class="h-8 px-2 rounded bg-surface-container-lowest font-body-sm text-body-sm text-on-surface focus:outline-none">
+<option>10</option>
+<option selected="">25</option>
+<option>50</option>
+<option>100</option>
+</select>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-2">Mostrando 1 a 5 de 1.482 matrículas</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded bg-surface-container-lowest text-outline hover:text-primary transition-colors flex items-center justify-center disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[18px]">first_page</span>
+</button>
+<button class="w-8 h-8 rounded bg-surface-container-lowest text-outline hover:text-primary transition-colors flex items-center justify-center disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary font-label-md text-label-md font-bold flex items-center justify-center shadow-sm">1</button>
+<button class="w-8 h-8 rounded bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center justify-center">2</button>
+<button class="w-8 h-8 rounded bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center justify-center">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="w-8 h-8 rounded bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center justify-center">60</button>
+<button class="w-8 h-8 rounded bg-surface-container-lowest text-outline hover:text-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="w-8 h-8 rounded bg-surface-container-lowest text-outline hover:text-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">last_page</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card Destacado: Fila de Espera & Balanço de Ocupação por Modalidade -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-md">
+<!-- Distribuição das Vagas por Modalidade -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-gutter-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Capacidade e Vagas por Modalidade</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Monitoramento de turmas com risco iminente de esgotamento ou subutilização</p>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface font-semibold">12 Modalidades Oferecidas</span>
+</div>
+<div class="space-y-4 pt-2">
+<!-- Item Natação -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">pool</span>
+                Natação (Infantil / Juvenil / Master)
+              </span>
+<span class="text-secondary font-bold">420 / 420 inscritos (100% - Lotado)</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 100%;"></div>
+</div>
+<div class="flex justify-between text-[11px] text-outline font-label-sm">
+<span>Fila de espera ativa: 34 candidatos</span>
+<span class="text-secondary font-semibold">Sem vagas remanescentes</span>
+</div>
+</div>
+<!-- Item Futsal -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">sports_soccer</span>
+                Futsal Formação (Sub-09 ao Sub-17)
+              </span>
+<span class="text-primary font-bold">365 / 380 inscritos (96%)</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 96%;"></div>
+</div>
+<div class="flex justify-between text-[11px] text-outline font-label-sm">
+<span>Fila de espera ativa: 14 candidatos</span>
+<span class="text-primary font-semibold">15 vagas disponíveis</span>
+</div>
+</div>
+<!-- Item Ginástica Funcional -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">accessibility_new</span>
+                Ginástica Geral &amp; Ritmos 60+
+              </span>
+<span class="text-primary font-bold">290 / 350 inscritos (82%)</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed-variant rounded-full" style="width: 82%;"></div>
+</div>
+<div class="flex justify-between text-[11px] text-outline font-label-sm">
+<span>Fila de espera: 0 candidatos</span>
+<span class="text-primary font-semibold">60 vagas abertas imediatas</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-gutter-md flex items-center justify-between border-t border-surface-container text-body-sm">
+<span class="text-on-surface-variant font-medium">Última atualização de capacidade do banco: Hoje às 11:42</span>
+<button class="font-label-lg text-label-lg text-secondary hover:underline font-semibold flex items-center gap-1">
+<span>Abrir Matriz Completa de Horários</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card de Impressão Rápida / Crachás de Acesso CSU -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">id_card</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Carteirinha CSU &amp; Catraca</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Emissão instantânea do crachá do polo com QR Code criptografado para leitor óptico nas portarias e balneário.
+        </p>
+<!-- Preview da Carteirinha -->
+<div class="mt-gutter-md p-gutter-sm rounded-lg bg-surface-container-low flex flex-col gap-2 relative overflow-hidden shadow-inner">
+<div class="flex items-center justify-between pb-1 border-b border-surface-container">
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary">PREFEITURA • POLO CSU</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">2025</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-14 bg-primary-container text-on-primary rounded flex items-center justify-center font-bold text-[18px]">
+<span class="material-symbols-outlined text-[32px]">face</span>
+</div>
+<div class="flex flex-col text-left overflow-hidden">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">NOME DO ALUNO</span>
+<span class="font-label-sm text-label-sm text-outline">Matrícula: #2025-XXXX</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Apto Triagem Médica</span>
+</div>
+<div class="ml-auto w-12 h-12 bg-surface-container-lowest p-1 rounded flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[36px]">qr_code_2</span>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-2 pt-gutter-md">
+<button class="w-full h-[38px] rounded-lg bg-primary text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Imprimir Carteirinhas Selecionadas</span>
+</button>
+<button class="w-full h-[34px] rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">smartphone</span>
+<span>Enviar Credencial via WhatsApp</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Modal / Painel Deslizante de Validação de Laudo Médico (Incluso no DOM e controlável por JS) -->
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm flex items-center justify-center p-gutter-md hidden" id="modal-laudos">
+<div class="bg-surface-container-lowest rounded-2xl shadow-xl max-w-2xl w-full flex flex-col overflow-hidden max-h-[90vh]">
+<!-- Header do Modal -->
+<div class="p-gutter-md bg-surface-container-low flex items-center justify-between border-b border-surface-container">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary">Homologação de Laudo Médico Desportivo</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Conformidade com Diretrizes da Secretaria de Saúde</span>
+</div>
+</div>
+<button class="p-1 rounded text-outline hover:text-on-surface transition-colors" onclick="document.getElementById('modal-laudos').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Corpo do Modal com Formulário de Homologação -->
+<div class="p-gutter-lg overflow-y-auto space-y-gutter-md flex-1">
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            O atestado anexado autoriza a prática esportiva sem restrições. Médicos precisam ter CRM ativo no conselho regional correspondente.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant">Aluno / Atleta</label>
+<input class="h-[38px] px-3 rounded bg-surface-container font-body-md text-body-md text-on-surface focus:outline-none cursor-not-allowed" readonly="" type="text" value="Enzo Gabriel Souza (#2025-0870)"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant">Modalidade de Prática</label>
+<input class="h-[38px] px-3 rounded bg-surface-container font-body-md text-body-md text-on-surface focus:outline-none cursor-not-allowed" readonly="" type="text" value="Futsal Sub-11 Formação"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant">Data da Avaliação</label>
+<input class="h-[38px] px-3 rounded bg-surface-container-low font-body-md text-body-md text-on-surface focus:ring-1 focus:ring-primary focus:outline-none" type="date" value="2025-02-01"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant">Validade Automática</label>
+<input class="h-[38px] px-3 rounded bg-surface-container font-body-md text-body-md text-on-surface focus:outline-none" readonly="" type="text" value="12 Meses (01/02/2026)"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant">CRM do Profissional</label>
+<input class="h-[38px] px-3 rounded bg-surface-container-low font-body-md text-body-md text-on-surface focus:ring-1 focus:ring-primary focus:outline-none" placeholder="CRM/SP 194.220" type="text"/>
+</div>
+</div>
+<!-- Área de Upload do Documento -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant">Documento Escaneado ou Fotografia Digital</label>
+<div class="p-gutter-md border-2 border-dashed border-outline-variant rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-surface-container-low transition-colors cursor-pointer text-center">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">cloud_upload</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-primary font-bold">Clique para carregar o arquivo ou arraste até aqui</p>
+<span class="font-body-sm text-body-sm text-outline">Suporta PDF, PNG ou JPG (até 8 MB)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-secondary focus:ring-secondary" id="liberar-catraca" type="checkbox"/>
+<label class="font-body-md text-body-md text-on-surface" for="liberar-catraca">Liberar credencial nas catracas imediatamente após a homologação</label>
+</div>
+</div>
+<!-- Rodapé do Modal -->
+<div class="p-gutter-md bg-surface-container-low flex items-center justify-end gap-gutter-sm border-t border-surface-container">
+<button class="h-[38px] px-gutter-md rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container transition-colors" onclick="document.getElementById('modal-laudos').classList.add('hidden')" type="button">
+          Cancelar
+        </button>
+<button class="h-[38px] px-gutter-lg rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-bold hover:bg-secondary/90 shadow-sm transition-colors" onclick="alert('Laudo homologado com sucesso! Aluno liberado nas catracas do CSU.'); document.getElementById('modal-laudos').classList.add('hidden')" type="button">
+          Homologar e Salvar Parecer
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Script Interativo para Filtros e Ações Rápidas -->
+<script>
+  // Ação de Exportação XLSX
+  document.getElementById('btn-export-excel').addEventListener('click', function () {
+    const originalText = this.innerHTML;
+    this.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span> Gerando XLSX...';
+    setTimeout(() => {
+      this.innerHTML = originalText;
+      alert('Relatório consolidado "SIGAE_Matriculas_CSU_Fev2025.xlsx" gerado com sucesso.');
+    }, 900);
+  });
+
+  // Limpeza de Filtros
+  document.getElementById('btn-reset-filters').addEventListener('click', function() {
+    document.getElementById('search-term').value = '';
+    document.getElementById('filter-cpf').value = '';
+    document.getElementById('filter-modality').value = 'all';
+    document.getElementById('filter-status').value = 'all';
+  });
+
+  // Modal Novo Aluno (Simulação)
+  document.getElementById('btn-open-enroll').addEventListener('click', function() {
+    alert('Abertura do Fluxo de Admissão: Ficha Cadastral e Coleta de Dados Pessoais / Biométrica.');
+  });
+</script></main></div></body></html>
