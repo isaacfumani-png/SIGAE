@@ -1,0 +1,173 @@
+<div class="flex flex-col w-full gap-gutter-lg" x-data="{
+  busca: '',
+  modalidadeFiltro: '',
+  alunos: [
+    { id: '1', nome: 'Lucas Ferreira Costa', cpf: '123.456.789-00', dataNasc: '2012-05-14', idade: 12, modalidade: 'Futsal Sub-13', responsavel: 'Sandra Ferreira', telefone: '(11) 98765-4321', atestadoStatus: 'valido', atestadoData: '2025-12-31' },
+    { id: '2', nome: 'Beatriz Martins de Sá', cpf: '234.567.890-11', dataNasc: '2015-08-22', idade: 9, modalidade: 'Natação Infantil', responsavel: 'Carlos Martins', telefone: '(11) 97654-3210', atestadoStatus: 'vencido', atestadoData: '2024-01-15' },
+    { id: '3', nome: 'Gabriel Oliveira Santos', cpf: '345.678.901-22', dataNasc: '1998-03-10', idade: 26, modalidade: 'Judô Graduação', responsavel: 'Próprio Aluno', telefone: '(11) 96543-2109', atestadoStatus: 'nao_enviado', atestadoData: '-' },
+    { id: '4', nome: 'Mariana Nogueira Lima', cpf: '456.789.012-33', dataNasc: '2010-11-05', idade: 14, modalidade: 'Ginástica Artística', responsavel: 'Mariana Nogueira', telefone: '(11) 95432-1098', atestadoStatus: 'valido', atestadoData: '2025-10-20' }
+  ],
+  alunoSelecionado: null,
+  modalNovoAluno: false,
+  novoAluno: { nome: '', cpf: '', dataNasc: '', telefone: '', email: '', responsavel: '', atestado: null, consentimentoLgpd: false },
+
+  salvarAluno() {
+    if (!this.novoAluno.consentimentoLgpd) {
+      $store.app.addToast('É necessário aceitar os termos da LGPD.', 'erro');
+      return;
+    }
+    const id = (this.alunos.length + 1).toString();
+    this.alunos.push({
+      id,
+      nome: this.novoAluno.nome,
+      cpf: this.novoAluno.cpf,
+      dataNasc: this.novoAluno.dataNasc,
+      idade: 14,
+      modalidade: 'Natação',
+      responsavel: this.novoAluno.responsavel || 'Próprio Aluno',
+      telefone: this.novoAluno.telefone,
+      atestadoStatus: 'valido',
+      atestadoData: '2025-12-31'
+    });
+    $store.app.addToast('Aluno cadastrado com sucesso!', 'sucesso');
+    this.modalNovoAluno = false;
+    this.novoAluno = { nome: '', cpf: '', dataNasc: '', telefone: '', email: '', responsavel: '', atestado: null, consentimentoLgpd: false };
+  }
+}">
+  <!-- Header do Módulo -->
+  <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-gutter-md">
+    <div class="space-y-1">
+      <div class="flex items-center gap-gutter-xs">
+        <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-container">Gestão de Alunos &amp; Praticantes</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        <span class="font-label-sm text-label-sm text-outline">Base Geral CSU</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Cadastro Geral de Alunos</h1>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Consulte prontuários, valide atestados médicos e gerencie autorizações LGPD dos alunos.
+      </p>
+    </div>
+    <div class="flex items-center gap-gutter-sm">
+      <button @click="modalNovoAluno = true" type="button" class="px-4 py-2 rounded shadow-sm bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant transition-all flex items-center gap-2 font-label-md text-label-md font-semibold">
+        <span class="material-symbols-outlined text-[18px]">person_add</span>
+        <span>Novo Aluno</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Barra de Filtros e Busca -->
+  <div class="p-gutter-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row items-center justify-between gap-gutter-md">
+    <div class="relative w-full sm:w-80 flex items-center">
+      <span class="material-symbols-outlined absolute left-3 text-outline pointer-events-none text-[18px]">search</span>
+      <input type="text" x-model="busca" placeholder="Buscar por Nome ou CPF..." class="w-full h-[38px] pl-9 pr-4 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary-container"/>
+    </div>
+    <div class="flex items-center gap-gutter-sm w-full sm:w-auto">
+      <span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Status Atestado:</span>
+      <select x-model="modalidadeFiltro" class="h-[38px] px-3 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary-container">
+        <option value="">Todos os Status</option>
+        <option value="valido">Válido</option>
+        <option value="vencido">Vencido</option>
+        <option value="nao_enviado">Pendente / Não Enviado</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Tabela de Alunos -->
+  <div class="p-gutter-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col">
+    <div class="overflow-x-auto">
+      <table class="w-full text-left">
+        <thead>
+          <tr class="bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm uppercase tracking-wider">
+            <th class="py-2.5 px-3 rounded-l">Nome Completo &amp; CPF</th>
+            <th class="py-2.5 px-3">Idade</th>
+            <th class="py-2.5 px-3">Responsável</th>
+            <th class="py-2.5 px-3">Contato</th>
+            <th class="py-2.5 px-3">Atestado Médico</th>
+            <th class="py-2.5 px-3 text-right rounded-r">Ações</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-transparent font-body-md text-body-md text-on-surface">
+          <template x-for="a in alunos.filter(x => !busca || x.nome.toLowerCase().includes(busca.toLowerCase()) || x.cpf.includes(busca))" :key="a.id">
+            <tr class="hover:bg-surface-container-low/40 transition-colors">
+              <td class="py-3 px-3">
+                <div class="flex flex-col">
+                  <span class="font-label-md text-label-md text-primary font-semibold" x-text="a.nome"></span>
+                  <span class="font-body-sm text-body-sm text-outline" x-text="a.cpf"></span>
+                </div>
+              </td>
+              <td class="py-3 px-3 font-data-tabular" x-text="a.idade + ' anos'"></td>
+              <td class="py-3 px-3 text-on-surface-variant" x-text="a.responsavel"></td>
+              <td class="py-3 px-3 font-data-tabular" x-text="a.telefone"></td>
+              <td class="py-3 px-3">
+                <span x-show="a.atestadoStatus === 'valido'" class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold inline-flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">check_circle</span> Válido até <span x-text="a.atestadoData"></span>
+                </span>
+                <span x-show="a.atestadoStatus === 'vencido'" class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold inline-flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">warning</span> Vencido
+                </span>
+                <span x-show="a.atestadoStatus === 'nao_enviado'" class="px-2 py-0.5 rounded bg-surface-container text-outline font-label-sm text-label-sm font-bold inline-flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">help</span> Não Enviado
+                </span>
+              </td>
+              <td class="py-3 px-3 text-right">
+                <button type="button" @click="alunoSelecionado = a" class="px-2.5 py-1.5 rounded bg-surface-container text-primary hover:bg-primary-container hover:text-on-primary text-label-sm font-label-sm transition-all">
+                  Ver Prontuário
+                </button>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal Cadastro de Aluno -->
+  <div x-show="modalNovoAluno" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" x-cloak>
+    <div class="bg-surface-container-lowest rounded-xl p-gutter-lg max-w-lg w-full flex flex-col gap-gutter-md shadow-xl border border-outline-variant/30">
+      <div class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+        <h3 class="font-headline-md text-headline-md text-primary font-bold">Cadastrar Novo Aluno</h3>
+        <button type="button" @click="modalNovoAluno = false" class="text-outline hover:text-on-surface">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <form @submit.prevent="salvarAluno()" class="flex flex-col gap-gutter-sm">
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-label-sm text-outline uppercase">Nome Completo</label>
+          <input type="text" required x-model="novoAluno.nome" class="h-[38px] px-3 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md"/>
+        </div>
+        <div class="grid grid-cols-2 gap-gutter-sm">
+          <div class="flex flex-col gap-1">
+            <label class="font-label-sm text-label-sm text-outline uppercase">CPF</label>
+            <input type="text" required x-model="novoAluno.cpf" placeholder="000.000.000-00" class="h-[38px] px-3 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md"/>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-sm text-label-sm text-outline uppercase">Data Nascimento</label>
+            <input type="date" required x-model="novoAluno.dataNasc" class="h-[38px] px-3 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md"/>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-gutter-sm">
+          <div class="flex flex-col gap-1">
+            <label class="font-label-sm text-label-sm text-outline uppercase">Telefone / WhatsApp</label>
+            <input type="text" required x-model="novoAluno.telefone" placeholder="(11) 90000-0000" class="h-[38px] px-3 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md"/>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-sm text-label-sm text-outline uppercase">Responsável (se menor)</label>
+            <input type="text" x-model="novoAluno.responsavel" placeholder="Nome do Responsável" class="h-[38px] px-3 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md"/>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-label-sm text-outline uppercase">Atestado Médico (PDF/Imagem)</label>
+          <input type="file" accept="application/pdf,image/*" class="text-body-sm text-outline border border-outline-variant rounded p-1"/>
+        </div>
+        <div class="flex items-center gap-2 pt-gutter-xs">
+          <input type="checkbox" id="lgpd" required x-model="novoAluno.consentimentoLgpd" class="w-4 h-4 text-secondary rounded"/>
+          <label for="lgpd" class="font-body-sm text-body-sm text-on-surface">Autorizo o uso dos dados para fins de gestão esportiva conforme a LGPD.</label>
+        </div>
+        <div class="flex justify-end gap-gutter-sm pt-gutter-sm border-t border-outline-variant/30">
+          <button type="button" @click="modalNovoAluno = false" class="px-4 py-2 rounded bg-surface-container text-primary font-label-md">Cancelar</button>
+          <button type="submit" class="px-4 py-2 rounded bg-secondary text-on-secondary font-label-md font-semibold">Salvar Cadastramento</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

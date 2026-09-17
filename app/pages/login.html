@@ -1,0 +1,67 @@
+<div class="min-h-[calc(100vh-theme(spacing.header-height))] flex items-center justify-center p-gutter-lg" x-data="{
+  email: '',
+  senha: '',
+  carregando: false,
+  erro: '',
+  async fazerLogin() {
+    this.carregando = true;
+    this.erro = '';
+    try {
+      // Mock/Real login
+      if (this.email === 'admin@csu.gov.br' || this.email.includes('admin')) {
+        $store.app.setUser({ id: '1', nome: 'Marcos Ribeiro', email: this.email, role: 'admin', polo: 'CSU' });
+      } else {
+        $store.app.setUser({ id: '2', nome: 'Profª Camila Duarte', email: this.email, role: 'professor', polo: 'CSU' });
+      }
+      $store.app.addToast('Login realizado com sucesso!', 'sucesso');
+      window.location.hash = '#/dashboard';
+    } catch (e) {
+      this.erro = e.message || 'Credenciais inválidas. Tente novamente.';
+    } finally {
+      this.carregando = false;
+    }
+  }
+}">
+  <div class="w-full max-w-md bg-surface-container-lowest p-gutter-xl rounded-xl shadow-md border border-outline-variant/30 flex flex-col gap-gutter-md">
+    <div class="flex flex-col items-center text-center gap-gutter-xs">
+      <div class="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center text-on-secondary font-headline-lg font-bold shadow-sm">
+        S
+      </div>
+      <h1 class="font-headline-lg text-headline-lg font-bold text-primary">SIGAE POLO CSU</h1>
+      <p class="font-body-md text-body-md text-on-surface-variant">
+        Acesse o sistema de gestão de esportes e lazer
+      </p>
+    </div>
+
+    <template x-if="erro">
+      <div class="p-3 rounded bg-error-container text-on-error-container font-label-md text-label-md flex items-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">error</span>
+        <span x-text="erro"></span>
+      </div>
+    </template>
+
+    <form @submit.prevent="fazerLogin()" class="flex flex-col gap-gutter-md">
+      <div class="flex flex-col gap-1">
+        <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-container">E-mail Corporativo</label>
+        <input type="email" required x-model="email" placeholder="exemplo@csu.gov.br" class="h-[42px] px-3 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container"/>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <div class="flex justify-between items-center">
+          <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-container">Senha de Acesso</label>
+          <a href="#" class="font-label-sm text-label-sm text-secondary hover:underline">Esqueceu a senha?</a>
+        </div>
+        <input type="password" required x-model="senha" placeholder="••••••••" class="h-[42px] px-3 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container"/>
+      </div>
+
+      <button type="submit" :disabled="carregando" class="h-[44px] rounded bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-2 transition-all shadow-sm">
+        <span x-show="!carregando">Entrar no Sistema</span>
+        <span x-show="carregando" class="animate-spin material-symbols-outlined text-[20px]">sync</span>
+      </button>
+    </form>
+
+    <div class="pt-gutter-xs text-center font-body-sm text-body-sm text-outline">
+      Secretaria Municipal de Esporte e Lazer • Polo CSU
+    </div>
+  </div>
+</div>
