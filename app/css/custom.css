@@ -1,0 +1,39 @@
+:root {
+  --primary: #191B62;
+  --primary-dark: #02004C;
+  --secondary: #B32E5E;
+  --tertiary: #646953;
+  --bg-surface: #F9ECE5;
+  --border-color: #D7CCC8;
+}
+
+body {
+  background-color: var(--bg-surface);
+  font-family: 'Open Sans', sans-serif;
+  color: #201A18;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Tabular nums for metric tables and counters */
+.font-data-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1e6e2;
+}
+::-webkit-scrollbar-thumb {
+  background: #c7c5d2;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #777682;
+}

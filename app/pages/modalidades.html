@@ -1,0 +1,103 @@
+<div class="flex flex-col w-full gap-gutter-lg" x-data="{
+  modalidades: [
+    { id: '1', nome: 'Natação', descricao: 'Prática de natação infantil e adulto com acompanhamento de instrutor', exigeAtestado: true, ativa: true, totalAlunos: 320, icone: 'pool' },
+    { id: '2', nome: 'Futsal', descricao: 'Treino de futsal para categorias de base e formação de cidadania', exigeAtestado: false, ativa: true, totalAlunos: 290, icone: 'sports_soccer' },
+    { id: '3', nome: 'Judô', descricao: 'Aulas de judô com foco na disciplina, respeito e graduação de faixas', exigeAtestado: false, ativa: true, totalAlunos: 200, icone: 'sports_martial_arts' },
+    { id: '4', nome: 'Ginástica Artística', descricao: 'Iniciação e aperfeiçoamento em ginástica de solo e aparelhos', exigeAtestado: false, ativa: true, totalAlunos: 185, icone: 'sports_gymnastics' },
+    { id: '5', nome: 'Pilates & Solo', descricao: 'Exercícios de fortalecimento de core e reabilitação postural', exigeAtestado: true, ativa: true, totalAlunos: 210, icone: 'self_improvement' }
+  ],
+  modalNovaModalidade: false,
+  novaMod: { nome: '', descricao: '', exigeAtestado: false, icone: 'fitness_center' },
+
+  salvarModalidade() {
+    const id = (this.modalidades.length + 1).toString();
+    this.modalidades.push({
+      id,
+      nome: this.novaMod.nome,
+      descricao: this.novaMod.descricao,
+      exigeAtestado: this.novaMod.exigeAtestado,
+      ativa: true,
+      totalAlunos: 0,
+      icone: this.novaMod.icone
+    });
+    $store.app.addToast('Modalidade criada com sucesso!', 'sucesso');
+    this.modalNovaModalidade = false;
+    this.novaMod = { nome: '', descricao: '', exigeAtestado: false, icone: 'fitness_center' };
+  }
+}">
+  <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-gutter-md">
+    <div class="space-y-1">
+      <div class="flex items-center gap-gutter-xs">
+        <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-container">Catálogo Esportivo</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        <span class="font-label-sm text-label-sm text-outline">Gestão de Modalidades</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Modalidades Esportivas</h1>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Configure as modalidades oferecidas no Polo CSU, regramento de atestados médicos e status de funcionamento.
+      </p>
+    </div>
+    <div class="flex items-center gap-gutter-sm">
+      <button @click="modalNovaModalidade = true" type="button" class="px-4 py-2 rounded shadow-sm bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant transition-all flex items-center gap-2 font-label-md text-label-md font-semibold">
+        <span class="material-symbols-outlined text-[18px]">add</span>
+        <span>Nova Modalidade</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-md">
+    <template x-for="m in modalidades" :key="m.id">
+      <div class="p-gutter-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-gutter-sm border border-outline-variant/30">
+        <div class="flex items-start justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]" x-text="m.icone"></span>
+            </div>
+            <div>
+              <h3 class="font-headline-sm text-headline-sm text-primary font-bold" x-text="m.nome"></h3>
+              <span class="font-body-sm text-body-sm text-outline" x-text="m.totalAlunos + ' alunos matriculados'"></span>
+            </div>
+          </div>
+          <span :class="m.ativa ? 'bg-emerald-100 text-emerald-800' : 'bg-surface-container text-outline'" class="px-2 py-0.5 rounded font-label-sm text-label-sm font-bold" x-text="m.ativa ? 'Ativa' : 'Inativa'"></span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant" x-text="m.descricao"></p>
+        <div class="pt-gutter-xs border-t border-outline-variant/30 flex justify-between items-center">
+          <span x-show="m.exigeAtestado" class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-label-sm text-label-sm font-bold inline-flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">medical_services</span> Exige Atestado
+          </span>
+          <span x-show="!m.exigeAtestado" class="font-body-sm text-body-sm text-outline">Atestado opcional</span>
+          <button type="button" class="text-secondary font-label-sm font-semibold hover:underline">Editar</button>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <div x-show="modalNovaModalidade" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" x-cloak>
+    <div class="bg-surface-container-lowest rounded-xl p-gutter-lg max-w-md w-full flex flex-col gap-gutter-md shadow-xl border border-outline-variant/30">
+      <div class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+        <h3 class="font-headline-md text-headline-md text-primary font-bold">Nova Modalidade</h3>
+        <button type="button" @click="modalNovaModalidade = false" class="text-outline hover:text-on-surface">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <form @submit.prevent="salvarModalidade()" class="flex flex-col gap-gutter-sm">
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-label-sm text-outline uppercase">Nome da Modalidade</label>
+          <input type="text" required x-model="novaMod.nome" placeholder="Ex: Basquete Misto" class="h-[38px] px-3 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md"/>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-label-sm text-outline uppercase">Descrição</label>
+          <textarea required x-model="novaMod.descricao" rows="3" class="p-2 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md"></textarea>
+        </div>
+        <div class="flex items-center gap-2 pt-gutter-xs">
+          <input type="checkbox" id="exigeAtestado" x-model="novaMod.exigeAtestado" class="w-4 h-4 text-secondary rounded"/>
+          <label for="exigeAtestado" class="font-body-md text-body-md text-on-surface">Exige Atestado Médico Obrigatório para Matrícula</label>
+        </div>
+        <div class="flex justify-end gap-gutter-sm pt-gutter-sm border-t border-outline-variant/30">
+          <button type="button" @click="modalNovaModalidade = false" class="px-4 py-2 rounded bg-surface-container text-primary font-label-md">Cancelar</button>
+          <button type="submit" class="px-4 py-2 rounded bg-secondary text-on-secondary font-label-md font-semibold">Salvar Modalidade</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

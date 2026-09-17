@@ -1,0 +1,507 @@
+<div class="flex flex-col w-full space-y-gutter-lg">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-gutter-md">
+<div class="space-y-1">
+<div class="flex items-center gap-gutter-xs">
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant font-bold">Operação Diária • CSU Central</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Terminal de Portaria 02</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary-container tracking-tight">Registro de Frequência &amp; Check-in Eletrônico</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Validação biométrica por QR Code, auditoria de presença e monitoramento preventivo de evasão escolar/esportiva.</p>
+</div>
+<div class="flex items-center gap-gutter-sm shrink-0">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface">Câmera Ativa</span>
+</div>
+<button class="px-4 py-2 rounded-lg bg-surface-container-lowest text-primary-container font-label-lg text-label-lg shadow-sm hover:bg-surface-container transition-colors flex items-center gap-2" onclick="document.getElementById('manual-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">keyboard</span>
+<span>Entrada Manual</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/90 text-on-secondary font-label-lg text-label-lg shadow-sm transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">cloud_sync</span>
+<span>Sincronizar Supabase</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm space-y-gutter-sm">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-md">
+<div class="flex flex-col space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Modalidade &amp; Turma</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">pool</span>
+<select class="w-full h-[40px] pl-9 pr-8 bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg appearance-none focus:outline-none focus:bg-surface-container transition-colors cursor-pointer">
+<option selected="">Natação Infantil - Turma A</option>
+<option>Futebol de Campo Sub-13</option>
+<option>Ginástica Artística Polo B</option>
+<option>Basquete Iniciação</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Turno / Horário</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">schedule</span>
+<select class="w-full h-[40px] pl-9 pr-8 bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg appearance-none focus:outline-none focus:bg-surface-container transition-colors cursor-pointer">
+<option selected="">Manhã - 08:30 às 09:30</option>
+<option>Manhã - 10:00 às 11:00</option>
+<option>Tarde - 14:00 às 15:00</option>
+<option>Tarde - 15:30 às 16:30</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Data da Sessão</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">calendar_today</span>
+<input class="w-full h-[40px] pl-9 pr-8 bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg focus:outline-none cursor-pointer" readonly="" type="text" value="Hoje, 14 de Outubro"/>
+<span class="material-symbols-outlined absolute right-2.5 text-outline text-[18px] pointer-events-none">event</span>
+</div>
+</div>
+<div class="flex flex-col space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Instrutor / Docente</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">badge</span>
+<input class="w-full h-[40px] pl-9 pr-3 bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg focus:outline-none" readonly="" type="text" value="Prof. Ricardo Mendes (CREF 02941-G)"/>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+<div class="lg:col-span-5 flex flex-col space-y-gutter-md">
+<div class="bg-primary-container text-on-primary rounded-xl p-gutter-md shadow-md overflow-hidden relative">
+<div class="flex items-center justify-between pb-gutter-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-[20px]">qr_code_scanner</span>
+<span class="font-headline-sm text-headline-sm font-semibold tracking-tight">Leitor de Crachás QR</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary text-secondary-fixed font-label-sm text-label-sm uppercase font-bold tracking-widest">Óptico HD</span>
+</div>
+<div class="relative w-full aspect-square max-h-[300px] bg-primary rounded-lg overflow-hidden flex flex-col items-center justify-center p-4">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity" data-alt="Close up athletic student sports identification card held toward a modern optical reader scanner in a vibrant indoor community sports center swimming pool area with ambient warm sunlit gymnasium background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyJKOvOoUKbosq6MAS-Fer1Lkf23xSG1z-HX-oCeRcID-kIAkQ2Y-V0bjqWFBFDNuvpJaRCTTnBwWV9vMgeBfx-mPXNEHtARI_S6knoXXMAxNdUwWYZLHvhO56_Kam2a45gkT7okXr97raESzv3cYKmR6bI9m7rrR3ZgUXhw6P8RHhqBelJvHTV2C_mMAxZlSEqiT1dejUJZlqsoDbaoZvoErFKDZBMq5ttf5D8ipsKyU4e6wu035vyA"/>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<div class="absolute inset-0 rounded-xl pointer-events-none shadow-[0_0_0_9999px_rgba(2,0,76,0.6)]"></div>
+<div class="absolute top-0 left-0 w-8 h-8 rounded-tl-lg bg-secondary"></div>
+<div class="absolute top-0 right-0 w-8 h-8 rounded-tr-lg bg-secondary"></div>
+<div class="absolute bottom-0 left-0 w-8 h-8 rounded-bl-lg bg-secondary"></div>
+<div class="absolute bottom-0 right-0 w-8 h-8 rounded-br-lg bg-secondary"></div>
+<div class="w-full h-0.5 bg-secondary shadow-[0_0_12px_#fd6796] animate-[bounce_2s_infinite]"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-40 pointer-events-none">
+<span class="material-symbols-outlined text-[72px] text-primary-fixed-dim">qr_code_2</span>
+</div>
+</div>
+<div class="absolute bottom-3 left-3 right-3 py-1.5 px-3 rounded bg-primary-container/90 backdrop-blur-md flex items-center justify-center gap-2 text-center">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+<span class="font-label-sm text-label-sm text-surface-variant">Aguardando leitura do crachá do aluno...</span>
+</div>
+</div>
+<div class="pt-gutter-md flex items-center justify-between gap-gutter-sm">
+<button class="flex-1 py-2.5 px-3 rounded-lg bg-secondary hover:bg-secondary/90 text-on-secondary font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm transition-all" onclick="simularLeitura()" type="button">
+<span class="material-symbols-outlined text-[18px]">sensors</span>
+<span>Simular Check-in</span>
+</button>
+<button class="px-4 py-2.5 rounded-lg bg-primary hover:bg-primary/80 text-primary-fixed-dim font-label-md text-label-md flex items-center gap-1 transition-colors" onclick="document.getElementById('manual-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">dialpad</span>
+<span>Digitar Matrícula</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-sm space-y-gutter-sm">
+<div class="flex items-center justify-between">
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Consolidado em Tempo Real</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Ocupação da Turma A</h3>
+</div>
+<span class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-headline-sm text-headline-sm font-bold">85.7%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-3 overflow-hidden flex">
+<div class="bg-primary-container h-full transition-all duration-500" style="width: 85.7%;"></div>
+<div class="bg-secondary h-full transition-all duration-500" style="width: 14.3%;"></div>
+</div>
+<div class="grid grid-cols-3 gap-gutter-xs pt-1">
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Confirmados</span>
+<span class="font-display-lg text-display-lg text-primary-container font-bold">24</span>
+<span class="font-body-sm text-body-sm text-outline">de 28 vagas</span>
+</div>
+<div class="p-3 rounded-lg bg-secondary-fixed/30 flex flex-col">
+<span class="font-label-sm text-label-sm text-on-secondary-fixed-variant">Ausentes</span>
+<span class="font-display-lg text-display-lg text-secondary font-bold">04</span>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">1 risco evasão</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Justificados</span>
+<span class="font-display-lg text-display-lg text-on-surface font-bold">00</span>
+<span class="font-body-sm text-body-sm text-outline">atestados: 0</span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-high flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Limite mínimo municipal estabelecido em 75% de frequência mensal para manutenção de gratuidade na cota esportiva do CSU.
+          </p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 flex flex-col space-y-gutter-md">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="p-gutter-md flex flex-col sm:flex-row sm:items-center sm:justify-between gap-gutter-sm bg-surface-container-low">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary-container">Lista Operacional de Chamada</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Atualização instantânea com salvamento assíncrono no IndexedDB</p>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span>
+<input class="w-full sm:w-64 h-[36px] pl-9 pr-3 rounded bg-surface-container-lowest font-body-sm text-body-sm text-on-surface focus:outline-none shadow-sm" id="filtro-alunos" placeholder="Filtrar por nome ou matrícula..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest uppercase font-label-sm text-label-sm text-on-surface-variant tracking-wider">
+<th class="py-3 px-4">Estudante</th>
+<th class="py-3 px-3">Matrícula</th>
+<th class="py-3 px-3">Idade</th>
+<th class="py-3 px-3 text-center">Últimas 5 Aulas</th>
+<th class="py-3 px-3">Check-in</th>
+<th class="py-3 px-4 text-right">Status / Registro</th>
+</tr>
+</thead>
+<tbody class="divide-y-0" id="lista-alunos-body">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-bold flex items-center justify-center shrink-0">
+                      AL
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Arthur Leonardo Dias</span>
+<span class="font-body-sm text-body-sm text-outline">Responsável: Marina Dias</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-on-surface font-semibold">
+                  #2024-0812
+                </td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-on-surface">
+                  9 anos
+                </td>
+<td class="py-3 px-3">
+<div class="flex items-center justify-center gap-1">
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+</div>
+</td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-secondary font-bold">
+                  08:24:11
+                </td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex rounded-lg p-0.5 bg-surface-container">
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm bg-primary-container text-on-primary font-bold shadow-sm" type="button">Pres.</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm text-on-surface-variant hover:text-on-surface" type="button">Aus.</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm text-on-surface-variant hover:text-on-surface" type="button">Just.</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors bg-secondary-fixed/10">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary font-label-md text-label-md font-bold flex items-center justify-center shrink-0">
+                      BM
+                    </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Beatriz Moreira Lima</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary text-on-secondary font-label-sm text-[10px] uppercase font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">warning</span> Risco Evasão
+                        </span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">3 faltas consecutivas</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-on-surface font-semibold">
+                  #2024-0455
+                </td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-on-surface">
+                  10 anos
+                </td>
+<td class="py-3 px-3">
+<div class="flex items-center justify-center gap-1">
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-rose-100 text-rose-800">F</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-rose-100 text-rose-800">F</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-rose-100 text-rose-800">F</span>
+</div>
+</td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-outline">
+                  --:--:--
+                </td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex rounded-lg p-0.5 bg-surface-container">
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm text-on-surface-variant hover:text-on-surface" type="button">Pres.</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm bg-secondary text-on-secondary font-bold shadow-sm" type="button">Aus.</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm text-on-surface-variant hover:text-on-surface" type="button">Just.</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md font-bold flex items-center justify-center shrink-0">
+                      CS
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Caio Silveira Novaes</span>
+<span class="font-body-sm text-body-sm text-outline">Responsável: Carla Novaes</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-on-surface font-semibold">
+                  #2024-0992
+                </td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-on-surface">
+                  8 anos
+                </td>
+<td class="py-3 px-3">
+<div class="flex items-center justify-center gap-1">
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-amber-100 text-amber-800">J</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+</div>
+</td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-secondary font-bold">
+                  08:19:40
+                </td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex rounded-lg p-0.5 bg-surface-container">
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm bg-primary-container text-on-primary font-bold shadow-sm" type="button">Pres.</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm text-on-surface-variant hover:text-on-surface" type="button">Aus.</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm text-on-surface-variant hover:text-on-surface" type="button">Just.</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-bold flex items-center justify-center shrink-0">
+                      DR
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Davi Ramos Alcantara</span>
+<span class="font-body-sm text-body-sm text-outline">Responsável: Thiago Alcantara</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-on-surface font-semibold">
+                  #2024-0104
+                </td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-on-surface">
+                  10 anos
+                </td>
+<td class="py-3 px-3">
+<div class="flex items-center justify-center gap-1">
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-rose-100 text-rose-800">F</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+</div>
+</td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-secondary font-bold">
+                  08:28:02
+                </td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex rounded-lg p-0.5 bg-surface-container">
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm bg-primary-container text-on-primary font-bold shadow-sm" type="button">Pres.</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm text-on-surface-variant hover:text-on-surface" type="button">Aus.</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm text-on-surface-variant hover:text-on-surface" type="button">Just.</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-bold flex items-center justify-center shrink-0">
+                      EF
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Eduarda Ferreira Pinto</span>
+<span class="font-body-sm text-body-sm text-outline">Responsável: Fernanda Pinto</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-on-surface font-semibold">
+                  #2024-0318
+                </td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-on-surface">
+                  9 anos
+                </td>
+<td class="py-3 px-3">
+<div class="flex items-center justify-center gap-1">
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+<span class="w-5 h-5 rounded flex items-center justify-center font-label-sm text-label-sm font-bold bg-emerald-100 text-emerald-800">P</span>
+</div>
+</td>
+<td class="py-3 px-3 font-data-tabular text-data-tabular text-secondary font-bold">
+                  08:31:45
+                </td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex rounded-lg p-0.5 bg-surface-container">
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm bg-primary-container text-on-primary font-bold shadow-sm" type="button">Pres.</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm text-on-surface-variant hover:text-on-surface" type="button">Aus.</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-label-sm text-on-surface-variant hover:text-on-surface" type="button">Just.</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-gutter-md bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-gutter-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Exibindo 5 alunos de 28 matriculados na sessão atual</span>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-3 py-1 rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-bold">1</span>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-sm" type="button">2</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-sm" type="button">3</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-gutter-md rounded-xl shadow-md flex flex-col md:flex-row items-center justify-between gap-gutter-md">
+<div class="flex items-center gap-gutter-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-primary-fixed-dim flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">fact_check</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Finalização de Aula &amp; Relatório de Aula</span>
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold">24 Presentes</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ao encerrar a chamada, o sistema disparará notificações via SMS/WhatsApp aos responsáveis de alunos ausentes.</span>
+</div>
+</div>
+<div class="flex items-center gap-gutter-sm w-full md:w-auto justify-end">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">save_as</span>
+<span>Salvar Rascunho</span>
+</button>
+<button class="px-5 py-2.5 rounded-lg bg-secondary hover:bg-secondary/90 text-on-secondary font-label-lg text-label-lg shadow-sm transition-all flex items-center gap-2" onclick="finalizarChamada()" type="button">
+<span class="material-symbols-outlined text-[18px]">send_and_archive</span>
+<span>Finalizar Chamada &amp; Enviar Notificações</span>
+</button>
+</div>
+</div>
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm" id="manual-modal">
+<div class="bg-surface-container-lowest rounded-xl max-w-md w-full p-gutter-lg shadow-xl space-y-gutter-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">dialpad</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary-container">Registro Manual</h3>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container" onclick="document.getElementById('manual-modal').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Insira o código numérico impresso sob o QR Code no crachá do participante.</p>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-on-surface-variant">Número de Matrícula</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline">tag</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface font-headline-sm text-headline-sm tracking-wider focus:outline-none focus:bg-surface-container" id="input-matricula" placeholder="Ex: 2024-0455" type="text"/>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md" onclick="document.getElementById('manual-modal').classList.add('hidden')" type="button">Cancelar</button>
+<button class="px-4 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md shadow-sm" onclick="confirmarManual()" type="button">Confirmar Presença</button>
+</div>
+</div>
+</div>
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-32 transition-transform duration-300 bg-primary-container text-on-primary px-4 py-3 rounded-xl shadow-xl flex items-center gap-3" id="toast-checkin">
+<div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-white" id="toast-title">Check-in Confirmado!</span>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim" id="toast-desc">Arthur Leonardo Dias validado.</span>
+</div>
+</div>
+</div>
+<script>
+  function simularLeitura() {
+    const toast = document.getElementById('toast-checkin');
+    const toastTitle = document.getElementById('toast-title');
+    const toastDesc = document.getElementById('toast-desc');
+
+    const mockAlunos = [
+      "Gabriel Toledo (#2024-0199)",
+      "Helena Matos (#2024-0731)",
+      "Lucas Silveira (#2024-0554)",
+      "Manuela Prado (#2024-0238)"
+    ];
+
+    const randomAluno = mockAlunos[Math.floor(Math.random() * mockAlunos.length)];
+
+    toastTitle.innerText = "Check-in Registrado!";
+    toastDesc.innerText = randomAluno + " às " + new Date().toLocaleTimeString();
+
+    toast.classList.remove('translate-y-32');
+
+    setTimeout(() => {
+      toast.classList.add('translate-y-32');
+    }, 3500);
+  }
+
+  function confirmarManual() {
+    const val = document.getElementById('input-matricula').value;
+    if(!val) return;
+    document.getElementById('manual-modal').classList.add('hidden');
+    document.getElementById('input-matricula').value = '';
+
+    const toast = document.getElementById('toast-checkin');
+    const toastTitle = document.getElementById('toast-title');
+    const toastDesc = document.getElementById('toast-desc');
+
+    toastTitle.innerText = "Matrícula Validada Manualmente";
+    toastDesc.innerText = "Registro salvo para " + val;
+
+    toast.classList.remove('translate-y-32');
+    setTimeout(() => {
+      toast.classList.add('translate-y-32');
+    }, 3500);
+  }
+
+  function finalizarChamada() {
+    const confirmacao = window.confirm("Deseja consolidar a chamada desta sessão? Notificações de ausência serão enviadas para os responsáveis dos alunos faltosos.");
+    if(confirmacao) {
+      const toast = document.getElementById('toast-checkin');
+      const toastTitle = document.getElementById('toast-title');
+      const toastDesc = document.getElementById('toast-desc');
+
+      toastTitle.innerText = "Sessão Concluída & Sincronizada";
+      toastDesc.innerText = "24 presenças registradas, 4 alertas disparados.";
+
+      toast.classList.remove('translate-y-32');
+      setTimeout(() => {
+        toast.classList.add('translate-y-32');
+      }, 4000);
+    }
+  }
+</script>

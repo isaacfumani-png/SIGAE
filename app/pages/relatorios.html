@@ -1,0 +1,82 @@
+<div class="flex flex-col w-full gap-gutter-lg" x-data="{
+  filtros: { modalidade: '', turma: '', periodoInicio: '', periodoFim: '' },
+  gerarXLSX() {
+    const data = [
+      ['Código Turma', 'Modalidade', 'Professor', 'Alunos Ativos', 'Taxa Frequência'],
+      ['TUR-NAT-04', 'Natação Infantil II', 'Camila Duarte', '25', '96%'],
+      ['TUR-FUT-02', 'Futsal Sub-13', 'Roberto Silva', '30', '93%'],
+      ['TUR-JUD-01', 'Judô Graduação', 'Fábio Kenji', '20', '95%'],
+      ['TUR-PIL-03', 'Pilates Solo Avançado', 'Juliana Faria', '20', '70%']
+    ];
+    const ws = XLSX.utils.aoa_to_sheet(data);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Relatório Frequencia');
+    XLSX.writeFile(wb, 'relatorio_frequencia_csu.xlsx');
+    $store.app.addToast('Relatório XLSX gerado!', 'sucesso');
+  },
+  imprimirPDF() {
+    window.print();
+  }
+}">
+  <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-gutter-md">
+    <div class="space-y-1">
+      <div class="flex items-center gap-gutter-xs">
+        <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-container">Análise &amp; Indicadores</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        <span class="font-label-sm text-label-sm text-outline">Relatórios Gerenciais</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Relatórios Operacionais &amp; Exportação</h1>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Exporte dados consolidados de ocupação, frequência por turma, alertas de evasão e lista de espera.
+      </p>
+    </div>
+    <div class="flex items-center gap-gutter-sm">
+      <button @click="imprimirPDF()" type="button" class="px-3.5 py-2 rounded shadow-sm bg-surface-container-lowest text-primary hover:bg-surface-container transition-all flex items-center gap-2 font-label-md text-label-md">
+        <span class="material-symbols-outlined text-[18px]">print</span>
+        <span>Imprimir PDF</span>
+      </button>
+      <button @click="gerarXLSX()" type="button" class="px-4 py-2 rounded shadow-sm bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant transition-all flex items-center gap-2 font-label-md text-label-md font-semibold">
+        <span class="material-symbols-outlined text-[18px]">file_download</span>
+        <span>Exportar Excel (.xlsx)</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-md">
+    <div class="p-gutter-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-gutter-xs border border-outline-variant/30 hover:border-secondary transition-all">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-secondary text-[24px]">event_available</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold">Frequência por Turma</h3>
+      </div>
+      <p class="font-body-sm text-body-sm text-outline">Demonstrativo detalhado de presenças e faltas acumuladas por período.</p>
+      <button @click="gerarXLSX()" type="button" class="mt-gutter-xs w-full py-1.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:text-on-primary transition-all">Gerar Relatório</button>
+    </div>
+
+    <div class="p-gutter-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-gutter-xs border border-outline-variant/30 hover:border-secondary transition-all">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-secondary text-[24px]">warning</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold">Alertas de Evasão</h3>
+      </div>
+      <p class="font-body-sm text-body-sm text-outline">Lista de alunos com 3 ou mais faltas consecutivas para busca ativa.</p>
+      <button @click="gerarXLSX()" type="button" class="mt-gutter-xs w-full py-1.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:text-on-primary transition-all">Gerar Relatório</button>
+    </div>
+
+    <div class="p-gutter-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-gutter-xs border border-outline-variant/30 hover:border-secondary transition-all">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-secondary text-[24px]">pie_chart</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold">Ocupação de Vagas</h3>
+      </div>
+      <p class="font-body-sm text-body-sm text-outline">Mapeamento da capacidade por modalidade e lista de espera acumulada.</p>
+      <button @click="gerarXLSX()" type="button" class="mt-gutter-xs w-full py-1.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:text-on-primary transition-all">Gerar Relatório</button>
+    </div>
+
+    <div class="p-gutter-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-gutter-xs border border-outline-variant/30 hover:border-secondary transition-all">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-secondary text-[24px]">cancel</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold">Relatório de Evasão</h3>
+      </div>
+      <p class="font-body-sm text-body-sm text-outline">Matrículas canceladas por motivo e período de desistência.</p>
+      <button @click="gerarXLSX()" type="button" class="mt-gutter-xs w-full py-1.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:text-on-primary transition-all">Gerar Relatório</button>
+    </div>
+  </div>
+</div>

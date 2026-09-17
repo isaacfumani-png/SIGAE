@@ -1,0 +1,115 @@
+<div class="flex flex-col w-full gap-gutter-lg" x-data="{
+  professores: [
+    { id: '1', nome: 'Profª Camila Duarte', modalidade: 'Natação', cref: '012345-G/SP', turmas: ['Natação Infantil II', 'Natação Adulto'], email: 'camila.duarte@csu.gov.br' },
+    { id: '2', nome: 'Prof. Roberto Silva', modalidade: 'Futsal', cref: '023456-G/SP', turmas: ['Futsal Sub-13', 'Futsal Sub-15'], email: 'roberto.silva@csu.gov.br' },
+    { id: '3', nome: 'Sensei Fábio Kenji', modalidade: 'Judô', cref: '034567-G/SP', turmas: ['Judô Graduação'], email: 'fabio.kenji@csu.gov.br' },
+    { id: '4', nome: 'Profª Juliana Faria', modalidade: 'Pilates', cref: '045678-G/SP', turmas: ['Pilates Solo Avançado'], email: 'juliana.faria@csu.gov.br' }
+  ],
+  modalNovoProf: false,
+  novoProf: { nome: '', modalidade: 'Natação', cref: '', email: '' },
+
+  salvarProfessor() {
+    const id = (this.professores.length + 1).toString();
+    this.professores.push({
+      id,
+      nome: this.novoProf.nome,
+      modalidade: this.novoProf.modalidade,
+      cref: this.novoProf.cref,
+      turmas: [],
+      email: this.novoProf.email
+    });
+    $store.app.addToast('Professor cadastrado com sucesso!', 'sucesso');
+    this.modalNovoProf = false;
+    this.novoProf = { nome: '', modalidade: 'Natação', cref: '', email: '' };
+  }
+}">
+  <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-gutter-md">
+    <div class="space-y-1">
+      <div class="flex items-center gap-gutter-xs">
+        <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-container">Corpo Docente &amp; Instrutores</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        <span class="font-label-sm text-label-sm text-outline">Gestão Operacional</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Professores &amp; Instrutores</h1>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Gerencie a equipe de professores, credenciais profissionais (CREF) e vinculação de turmas.
+      </p>
+    </div>
+    <div class="flex items-center gap-gutter-sm">
+      <button @click="modalNovoProf = true" type="button" class="px-4 py-2 rounded shadow-sm bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant transition-all flex items-center gap-2 font-label-md text-label-md font-semibold">
+        <span class="material-symbols-outlined text-[18px]">person_add</span>
+        <span>Novo Professor</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-md">
+    <template x-for="p in professores" :key="p.id">
+      <div class="p-gutter-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-gutter-sm border border-outline-variant/30">
+        <div class="flex items-start justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold font-headline-sm" x-text="p.nome.substring(0,2).toUpperCase()"></div>
+            <div>
+              <h3 class="font-headline-sm text-headline-sm text-primary font-bold" x-text="p.nome"></h3>
+              <span class="font-label-sm text-label-sm text-outline" x-text="'CREF: ' + p.cref"></span>
+            </div>
+          </div>
+          <span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold" x-text="p.modalidade"></span>
+        </div>
+        <div class="space-y-1 pt-gutter-xs">
+          <span class="font-label-sm text-label-sm uppercase text-outline block">Turmas Sob Responsabilidade:</span>
+          <div class="flex flex-wrap gap-1">
+            <template x-for="t in p.turmas">
+              <span class="px-2 py-0.5 rounded bg-surface-container-low text-on-surface font-body-sm text-body-sm" x-text="t"></span>
+            </template>
+            <span x-show="p.turmas.length === 0" class="font-body-sm text-body-sm text-outline italic">Nenhuma turma vinculada</span>
+          </div>
+        </div>
+        <div class="pt-gutter-xs border-t border-outline-variant/30 flex justify-between items-center font-body-sm text-body-sm text-outline">
+          <span x-text="p.email"></span>
+          <button type="button" class="text-secondary font-label-sm font-semibold hover:underline">Editar</button>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <div x-show="modalNovoProf" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" x-cloak>
+    <div class="bg-surface-container-lowest rounded-xl p-gutter-lg max-w-md w-full flex flex-col gap-gutter-md shadow-xl border border-outline-variant/30">
+      <div class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+        <h3 class="font-headline-md text-headline-md text-primary font-bold">Novo Professor</h3>
+        <button type="button" @click="modalNovoProf = false" class="text-outline hover:text-on-surface">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <form @submit.prevent="salvarProfessor()" class="flex flex-col gap-gutter-sm">
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-label-sm text-outline uppercase">Nome Completo</label>
+          <input type="text" required x-model="novoProf.nome" class="h-[38px] px-3 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md"/>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-label-sm text-outline uppercase">Modalidade Principal</label>
+          <select x-model="novoProf.modalidade" class="h-[38px] px-3 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md">
+            <option value="Natação">Natação</option>
+            <option value="Futsal">Futsal</option>
+            <option value="Judô">Judô</option>
+            <option value="Ginástica">Ginástica</option>
+            <option value="Pilates">Pilates</option>
+            <option value="Vôlei">Vôlei</option>
+          </select>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-label-sm text-outline uppercase">Registro CREF</label>
+          <input type="text" required x-model="novoProf.cref" placeholder="000000-G/SP" class="h-[38px] px-3 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md"/>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-label-sm text-outline uppercase">E-mail Corporativo</label>
+          <input type="email" required x-model="novoProf.email" placeholder="nome@csu.gov.br" class="h-[38px] px-3 rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md"/>
+        </div>
+        <div class="flex justify-end gap-gutter-sm pt-gutter-sm border-t border-outline-variant/30">
+          <button type="button" @click="modalNovoProf = false" class="px-4 py-2 rounded bg-surface-container text-primary font-label-md">Cancelar</button>
+          <button type="submit" class="px-4 py-2 rounded bg-secondary text-on-secondary font-label-md font-semibold">Salvar Professor</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
