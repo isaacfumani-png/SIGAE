@@ -1,4 +1,4 @@
-# SIGAE POLO CSU — Sistema de Gestão de Esportes e Lazer
+# SIGAE POLO CSU v1.0.0 — Sistema de Gestão de Esportes e Lazer
 
 Sistema Integrado de Gestão de Esportes e Lazer para o Polo CSU (Centro Social Urbano), desenvolvido com arquitetura **Single Page Application (SPA)** leve e moderna (vanilla JavaScript, ES Modules, Alpine.js, Tailwind CSS e Supabase).
 
@@ -7,7 +7,9 @@ Sistema Integrado de Gestão de Esportes e Lazer para o Polo CSU (Centro Social 
 ## 🔑 Credenciais de Acesso ao Sistema
 
 - **Usuário**: `isaac` (ou `isaac@csu.gov.br`)
-- **Senha**: `123`
+- **Senha**: `123` (ou `123456` no Supabase Auth)
+
+> O usuário `isaac@csu.gov.br` está cadastrado diretamente no Supabase em **`auth.users`** e com perfil administrativo correspondente em **`public.perfis`**.
 
 ---
 
