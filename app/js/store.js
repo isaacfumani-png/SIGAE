@@ -1,7 +1,9 @@
 // store.js - Estado global da aplicação com Alpine.store
+import { ENABLE_SERVICE_WORKER } from './config.js';
+
 export function initStore() {
   Alpine.store('app', {
-    user: { id: '1', nome: 'Marcos Ribeiro', email: 'admin@csu.gov.br', role: 'admin', polo: 'CSU' }, // Perfil padrao logado para demonstracao
+    user: { id: '1', nome: 'Isaac Admin', email: 'isaac@csu.gov.br', role: 'admin', polo: 'CSU' },
     session: null,
     notificacoes: [],
     offline: !navigator.onLine,
@@ -59,8 +61,18 @@ export function initStore() {
   window.addEventListener('online', () => Alpine.store('app').setOfflineStatus(false));
   window.addEventListener('offline', () => Alpine.store('app').setOfflineStatus(true));
 
+  // Controle de ativação/desativação do Service Worker (sw.js)
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW reg error:', err));
+    if (ENABLE_SERVICE_WORKER) {
+      navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW reg error:', err));
+    } else {
+      // Unregister if currently active
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
   }
 }
 
