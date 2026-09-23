@@ -52,7 +52,7 @@ As interfaces foram criadas seguindo rigorosamente o Design System do projeto (`
 
 ## 🔑 Credenciais & Conectividade Supabase
 
-- **REST Endpoint**: `https://fadvfvevitqcvyazzrtt.supabase.co`
+- **REST Endpoint**: `https://fadvfvevitqcvyazzrtt.supabase.co/rest/v1/`
 - **Chave Pública (Publishable)**: `sb_publishable_Mmicx17voeM8ZLOkTCdiLQ_RM9AGQUX`
 
 A integração frontend realiza comunicação via cliente REST do Supabase (`app/js/db.js`) com tolerância a falhas e dados mock para simulação offline e demonstração imediata.
