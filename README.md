@@ -4,6 +4,13 @@ Sistema Integrado de Gestão de Esportes e Lazer para o Polo CSU (Centro Social 
 
 ---
 
+## 🔑 Credenciais de Acesso ao Sistema
+
+- **Usuário**: `isaac` (ou `isaac@csu.gov.br`)
+- **Senha**: `123`
+
+---
+
 ## 📋 Sumário Executivo & Plano de Desenvolvimento
 
 ### 1. Visão Geral do Sistema
@@ -20,6 +27,18 @@ O esquema SQL do banco de dados encontra-se em `SPECS/schema_supabase_polo_csu.s
 - **`presenca`**: Registro de chamadas diárias via QR Code, manual ou lista.
 - **`alertas_faltas`**: Triggers para detecção automática de evasão (3+ faltas consecutivas).
 - **`vw_turmas_resumo`, `vw_frequencia_diaria`, `vw_alertas_faltas`**: Views analíticas utilizadas nos painéis de gestão.
+
+---
+
+## ⚙️ Controle de Service Worker (`sw.js`)
+
+O carregamento e registro do **Service Worker (`sw.js`)** é configurado em `app/js/config.js`:
+
+```javascript
+export const ENABLE_SERVICE_WORKER = false; // Alterne para true caso deseje ativar o cache PWA offline
+```
+
+Por padrão, a variável está definida como `false` para evitar interferência de cache durante o desenvolvimento e uso diário.
 
 ---
 
@@ -46,7 +65,7 @@ As interfaces foram criadas seguindo rigorosamente o Design System do projeto (`
 6. **`/#/professores`** (`app/pages/professores.html`): Cadastro e gestão de instrutores e turmas sob responsabilidade.
 7. **`/#/modalidades`** (`app/pages/modalidades.html`): Configuração de modalidades esportivas e exigência de atestados.
 8. **`/#/relatorios`** (`app/pages/relatorios.html`): Geração e exportação de relatórios em planilha Excel (`.xlsx`) e PDF.
-9. **`/#/login`** (`app/pages/login.html`): Autenticação de usuários.
+9. **`/#/login`** (`app/pages/login.html`): Autenticação de usuários (`isaac` / `123`).
 
 ---
 
@@ -54,49 +73,6 @@ As interfaces foram criadas seguindo rigorosamente o Design System do projeto (`
 
 - **REST Endpoint**: `https://fadvfvevitqcvyazzrtt.supabase.co/rest/v1/`
 - **Chave Pública (Publishable)**: `sb_publishable_Mmicx17voeM8ZLOkTCdiLQ_RM9AGQUX`
-
-A integração frontend realiza comunicação via cliente REST do Supabase (`app/js/db.js`) com tolerância a falhas e dados mock para simulação offline e demonstração imediata.
-
----
-
-## 🛠️ Estrutura do Projeto
-
-```
-.
-├── index.html                  # Container principal SPA
-├── sw.js                       # Service Worker para suporte PWA / offline
-├── README.md                   # Documentação e plano de desenvolvimento
-├── SPECS/                      # Documentação de especificação e SQL
-│   ├── Design MD.md
-│   ├── SPEC_Sistema_Gestao_Esporte_Lazer_Polo_CSU.pdf
-│   └── schema_supabase_polo_csu.sql
-├── THEME/                      # Interfaces originais geradas pelo Google Stitch
-│   ├── controle_de_frequ_ncia_check_in_sigae/
-│   ├── dashboard_operacional_sigae_polo_csu/
-│   ├── matr_culas_gest_o_de_vagas_sigae/
-│   ├── sigae_polo_csu/
-│   └── turmas_hor_rios_sigae_polo_csu/
-└── app/                        # Código fonte da aplicação
-    ├── css/
-    │   └── custom.css
-    ├── js/
-    │   ├── config.js          # Credenciais e constantes
-    │   ├── db.js              # Wrapper de comunicação Supabase
-    │   ├── main.js            # Entry point da aplicação
-    │   ├── router.js          # Gerenciador de rotas em Hash
-    │   ├── store.js           # Estado global Alpine.store
-    │   └── utils.js           # Funções auxiliares
-    └── pages/                 # Views parciais injetadas na SPA
-        ├── alunos.html
-        ├── dashboard.html
-        ├── frequencia.html
-        ├── login.html
-        ├── matriculas.html
-        ├── modalidades.html
-        ├── professores.html
-        ├── relatorios.html
-        └── turmas.html
-```
 
 ---
 
@@ -112,4 +88,4 @@ python3 -m http.server 8080
 npx serve .
 ```
 
-Acesse em seu navegador: `http://localhost:8080/#/dashboard`
+Acesse em seu navegador: `http://localhost:8080/#/login`
