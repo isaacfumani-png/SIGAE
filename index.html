@@ -14,6 +14,26 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="app/css/custom.css"/>
 
+  <!-- Style auxiliar para isolamento da tela de login -->
+  <style>
+    body.is-login-page aside,
+    body.is-login-page header {
+      display: none !important;
+    }
+    body.is-login-page div.pl-sidebar-width {
+      padding-left: 0 !important;
+    }
+    body.is-login-page main#main-content {
+      padding-top: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+
   <!-- Tailwind CSS Play CDN & Configuração -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -119,8 +139,8 @@
 </head>
 <body class="bg-surface font-body-md text-body-md text-on-surface antialiased" x-data>
 
-  <!-- Sidebar Lateral Fixa -->
-  <aside class="fixed left-0 top-0 h-full w-sidebar-width bg-primary-container text-on-primary z-50 flex flex-col justify-between select-none shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <!-- Sidebar Lateral Fixa (Oculta se não houver usuário logado) -->
+  <aside x-show="$store.app && $store.app.user" class="fixed left-0 top-0 h-full w-sidebar-width bg-primary-container text-on-primary z-50 flex flex-col justify-between select-none shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
     <div class="flex flex-col flex-1 min-h-0">
       <!-- Header Sidebar -->
       <div class="h-header-height px-gutter-md flex items-center gap-gutter-sm bg-primary/20">
@@ -186,13 +206,13 @@
       </div>
       <div class="flex items-center justify-between pt-gutter-xs">
         <div class="flex items-center gap-gutter-xs min-w-0">
-          <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-on-secondary font-label-md text-label-md font-bold" x-text="$store.app && $store.app.user ? $store.app.user.nome.substring(0,2).toUpperCase() : 'MR'">MR</div>
+          <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-on-secondary font-label-md text-label-md font-bold" x-text="$store.app && $store.app.user ? $store.app.user.nome.substring(0,2).toUpperCase() : ''">IA</div>
           <div class="flex flex-col min-w-0 leading-tight">
-            <span class="font-label-md text-label-md text-on-primary truncate" x-text="$store.app && $store.app.user ? $store.app.user.nome : 'Marcos Ribeiro'">Marcos Ribeiro</span>
-            <span class="font-label-sm text-label-sm text-on-primary-container truncate uppercase" x-text="$store.app && $store.app.user ? $store.app.user.role : 'Admin'">Admin</span>
+            <span class="font-label-md text-label-md text-on-primary truncate" x-text="$store.app && $store.app.user ? $store.app.user.nome : ''"></span>
+            <span class="font-label-sm text-label-sm text-on-primary-container truncate uppercase" x-text="$store.app && $store.app.user ? $store.app.user.role : ''"></span>
           </div>
         </div>
-        <button type="button" class="p-1.5 text-surface-variant hover:text-secondary-fixed transition-colors" title="Encerrar sessão" @click="window.location.hash='#/login'">
+        <button type="button" class="p-1.5 text-surface-variant hover:text-secondary-fixed transition-colors" title="Encerrar sessão" @click="$store.app ? $store.app.logout() : null">
           <span class="material-symbols-outlined text-[20px]">logout</span>
         </button>
       </div>
@@ -200,9 +220,9 @@
   </aside>
 
   <!-- Container Principal -->
-  <div class="pl-sidebar-width min-h-screen">
-    <!-- Header Superior Fixo -->
-    <header class="fixed top-0 left-sidebar-width right-0 h-header-height bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-lg">
+  <div class="min-h-screen" :class="$store.app && $store.app.user ? 'pl-sidebar-width' : ''">
+    <!-- Header Superior Fixo (Oculto se não houver usuário logado) -->
+    <header x-show="$store.app && $store.app.user" class="fixed top-0 left-sidebar-width right-0 h-header-height bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-lg">
       <div class="flex items-center gap-gutter-md min-w-0">
         <div class="hidden md:flex items-center gap-gutter-xs">
           <span class="px-2 py-0.5 rounded bg-surface-variant font-label-sm text-label-sm text-on-surface-variant font-semibold">Polo CSU</span>
@@ -225,7 +245,7 @@
     </header>
 
     <!-- Conteúdo Dinâmico das Páginas -->
-    <main id="main-content" class="w-full pt-header-height bg-surface px-gutter-lg pb-gutter-xl">
+    <main id="main-content" class="w-full bg-surface" :class="$store.app && $store.app.user ? 'pt-header-height px-gutter-lg pb-gutter-xl' : ''">
       <!-- O HTML da rota ativa será injetado aqui -->
     </main>
   </div>

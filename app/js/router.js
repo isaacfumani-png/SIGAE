@@ -18,18 +18,34 @@ export async function navigateTo(hash) {
 }
 
 export async function handleRouting() {
-  const hash = window.location.hash || '#/dashboard';
-  const pagePath = routes[hash] || routes['#/dashboard'];
-  const appContainer = document.getElementById('main-content');
+  const hash = window.location.hash || '#/login';
+  const isLoginPage = (hash === '#/login');
 
-  // Verificar sessão se não for tela de login
-  if (hash !== '#/login') {
-    const session = await db.getSession();
-    if (!session) {
+  // Ajusta visibilidade do layout no body para isolar a tela de login
+  if (isLoginPage) {
+    document.body.classList.add('is-login-page');
+  } else {
+    document.body.classList.remove('is-login-page');
+  }
+
+  // Verificar autenticação se não for tela de login
+  if (!isLoginPage) {
+    const user = Alpine.store('app')?.user;
+    if (!user) {
       window.location.hash = '#/login';
       return;
     }
+  } else {
+    // Se estiver no login e já estiver autenticado, vai para o dashboard
+    const user = Alpine.store('app')?.user;
+    if (user) {
+      window.location.hash = '#/dashboard';
+      return;
+    }
   }
+
+  const pagePath = routes[hash] || (Alpine.store('app')?.user ? routes['#/dashboard'] : routes['#/login']);
+  const appContainer = document.getElementById('main-content');
 
   try {
     const response = await fetch(pagePath);
@@ -37,7 +53,6 @@ export async function handleRouting() {
     const html = await response.text();
     if (appContainer) {
       appContainer.innerHTML = html;
-      // Re-inicializa componentes Alpine na nova view se necessário
     }
     updateActiveNav(hash);
   } catch (error) {

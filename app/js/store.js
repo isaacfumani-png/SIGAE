@@ -3,15 +3,28 @@ import { ENABLE_SERVICE_WORKER } from './config.js';
 
 export function initStore() {
   Alpine.store('app', {
-    user: { id: '1', nome: 'Isaac Admin', email: 'isaac@csu.gov.br', role: 'admin', polo: 'CSU' },
-    session: null,
+    user: JSON.parse(localStorage.getItem('sigae_user') || 'null'),
+    session: JSON.parse(localStorage.getItem('sigae_session') || 'null'),
     notificacoes: [],
     offline: !navigator.onLine,
     sincronizando: false,
     turmaAtiva: null,
 
-    setUser(user) {
+    setUser(user, session = { access_token: 'auth-session-token' }) {
       this.user = user;
+      this.session = session;
+      if (user) {
+        localStorage.setItem('sigae_user', JSON.stringify(user));
+        localStorage.setItem('sigae_session', JSON.stringify(session));
+      } else {
+        localStorage.removeItem('sigae_user');
+        localStorage.removeItem('sigae_session');
+      }
+    },
+
+    logout() {
+      this.setUser(null, null);
+      window.location.hash = '#/login';
     },
 
     setOfflineStatus(isOffline) {
